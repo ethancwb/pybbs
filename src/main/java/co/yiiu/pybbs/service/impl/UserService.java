@@ -91,7 +91,7 @@ public class UserService implements IUserService {
         if (!StringUtils.isEmpty(password)) user.setPassword(new BCryptPasswordEncoder().encode(password));
         user.setToken(token);
         user.setInTime(new Date());
-        if (avatar == null) avatar = identicon.generator(username);
+        if (avatar == null) avatar = "http://img.youai123.com/ugc/1586037681-81498.gif";
         user.setAvatar(avatar);
         user.setEmail(email);
         user.setBio(bio);
