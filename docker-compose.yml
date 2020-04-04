@@ -5,7 +5,7 @@ services:
     image: mysql/mysql-server:5.7
     environment:
       MYSQL_DATABASE: pybbs
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: dangerous
       MYSQL_ROOT_HOST: '%'
       TZ: Asia/Shanghai
     expose:
