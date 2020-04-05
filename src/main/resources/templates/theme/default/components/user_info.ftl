@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-body pb-2">
+    <div class="card-body pb-2 mt-2">
         <div class="media">
             <a href="/user/${_user.username!}" class="mr-3">
                 <img src="${_user.avatar!}" title="${_user.username!}" class="avatar"/>
@@ -13,10 +13,19 @@
                 </div>
             </div>
         </div>
-        <div class="mt-2">
-            <a href="/topic/create">
-                <span class="fa fa-pencil"></span><i>发布话题</i>
-            </a>
+        <div class="mt-4">
+            <div class="row">
+                <div class="col-sm-6 less-padding">
+                    <a class="btn btn-primary" href="/topic/create" style="min-width: 100%" role="button">
+                        <span class="fa fa-pencil"></span><i>发贴</i>
+                    </a>
+                </div>
+                <div class="col-sm-6 less-padding">
+                    <a class="btn btn-primary" href="/topic/create" style="min-width: 100%" role="button">
+                        <span class="loginIcon"></span><i>签到</i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="card-footer pt-2 pb-2" style="background-color: white; font-size: 14px;">

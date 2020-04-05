@@ -7,6 +7,21 @@ a, a:hover {
     color: #333;
 }
 
+.less-padding {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.loginIcon {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    vertical-align: text-top;
+    padding-top: 20px;
+    margin-right: 5px;
+    background: url("/static/theme/default/images/login-icon.svg") no-repeat;
+}
+
 .CodeMirror {
     font-family: "Microsoft YaHei UI", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     border: 1px solid #ddd;
@@ -224,4 +239,10 @@ a, a:hover {
 
 .welcome p:last-child {
     margin-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        min-width: 75vw;
+    }
 }

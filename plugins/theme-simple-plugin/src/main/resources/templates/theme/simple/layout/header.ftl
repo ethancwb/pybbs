@@ -2,12 +2,14 @@
   <header>
     <ul>
       <li><a href="/" class="title">${site.name}</a></li>
-      <li <#if page_tab == "all">class="active"</#if>><a href="/?tab=all">全部</a></li>
       <li <#if page_tab == "good">class="active"</#if>><a href="/?tab=good">精华</a></li>
       <li <#if page_tab == "hot">class="active"</#if>><a href="/?tab=hot">最热</a></li>
       <li <#if page_tab == "newest">class="active"</#if>><a href="/?tab=newest">最新</a></li>
-      <li <#if page_tab == "noanswer">class="active"</#if>><a href="/?tab=noanswer">无人问津</a></li>
-      <li <#if page_tab == "tags">class="active"</#if>><a href="/tags">标签</a></li>
+      <li <#if page_tab == "noanswer">class="active"</#if>><a href="/?tab=job">求职</a></li>
+      <li <#if page_tab == "noanswer">class="active"</#if>><a href="/?tab=yuepao">同城</a></li>
+      <li <#if page_tab == "noanswer">class="active"</#if>><a href="/?tab=academic">学术</a></li>
+      <li <#if page_tab == "noanswer">class="active"</#if>><a href="/?tab=hobbies">爱好</a></li>
+      <li <#if page_tab == "tags">class="active"</#if>><a href="/else">其他</a></li>
     </ul>
     <ul>
       <#if _user??>

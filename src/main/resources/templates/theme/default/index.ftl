@@ -9,11 +9,9 @@
     </#if>
     <div class="row">
         <div class="col-md-9">
-            <div class="card">
+            <div class="card" style="min-height: 85vh">
                 <div class="card-header">
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a class="nav-link <#if tab=="all">active</#if>" href="/?tab=all">全部</a>
-                        </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="good">active</#if>" href="/?tab=good">精华</a>
                         </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="hot">active</#if>" href="/?tab=hot">最热</a>
@@ -21,8 +19,20 @@
                             <li class="nav-item"><a class="nav-link <#if tab=="newest">active</#if>"
                                                     href="/?tab=newest">最新</a>
                             </li>
-                        <li class="nav-item"><a class="nav-link <#if tab=="noanswer">active</#if>"
-                                                href="/?tab=noanswer">无人问津</a>
+                        <li class="nav-item"><a class="nav-link <#if tab=="job">active</#if>"
+                                                href="/?tab=job">求职</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link <#if tab=="yuepao">active</#if>"
+                            href="/?tab=yuepao">同城</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link <#if tab=="academic">active</#if>"
+                            href="/?tab=academic">学术</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link <#if tab=="hobbies">active</#if>"
+                            href="/?tab=hobbies">爱好</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link <#if tab=="else">active</#if>"
+                            href="/?tab=else">其他</a>
                         </li>
                     </ul>
                 </div>

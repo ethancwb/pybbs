@@ -187,4 +187,10 @@ ol, ul {
   border-top: 1px solid #000;
   text-align: center; }
 
+@media (min-width: 1200px) {
+  .container {
+    width: 90vw;
+  }
+}
+
 /*# sourceMappingURL=app.css.map */
