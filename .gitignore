@@ -31,3 +31,4 @@ mysql
 static/upload/
 .sass-cache/
 src/main/resources/application-dev.yml
+*.yml
