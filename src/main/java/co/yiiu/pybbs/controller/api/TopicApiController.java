@@ -10,17 +10,16 @@ import co.yiiu.pybbs.service.*;
 import co.yiiu.pybbs.util.IpUtil;
 import co.yiiu.pybbs.util.Result;
 import co.yiiu.pybbs.util.SensitiveWordUtil;
+import co.yiiu.pybbs.util.StringUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by tomoya.
@@ -83,17 +82,18 @@ public class TopicApiController extends BaseApiController {
         // ApiAssert.isTrue(user.getActive(), "你的帐号还没有激活，请去个人设置页面激活帐号"); //TODO: Uncomment
         String title = body.get("title");
         String content = body.get("content");
-        String tag = body.get("tag");
-        //    String tags = body.get("tags");
+        //String tag = body.get("tag");
+        String tags = body.get("tags");
         ApiAssert.notEmpty(title, "请输入标题");
         ApiAssert.isNull(topicService.selectByTitle(title), "话题标题重复");
-        //    String[] strings = StringUtils.commaDelimitedListToStringArray(tags);
-        //    Set<String> set = StringUtil.removeEmpty(strings);
-        //    ApiAssert.notTrue(set.isEmpty() || set.size() > 5, "请输入标签且标签最多5个");
+        String[] strings = StringUtils.commaDelimitedListToStringArray(tags);
+        Set<String> set = StringUtil.removeEmpty(strings);
+        ApiAssert.notTrue(set.isEmpty() || set.size() > 5, "请输入标签且标签最多5个");
         // 保存话题
         // 再次将tag转成逗号隔开的字符串
-        //    tags = StringUtils.collectionToCommaDelimitedString(set);
-        Topic topic = topicService.insert(title, content, tag, user, session);
+        tags = StringUtils.collectionToCommaDelimitedString(set);
+        Topic topic = topicService.insert(title, content, tags, user, session);
+
         topic.setContent(SensitiveWordUtil.replaceSensitiveWord(topic.getContent(), "*", SensitiveWordUtil.MinMatchType));
         return success(topic);
     }

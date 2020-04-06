@@ -17,10 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpSession;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by tomoya.
@@ -52,7 +49,6 @@ public class TopicService implements ITopicService {
     private INotificationService notificationService;
     @Autowired
     private IndexedService indexedService;
-
     @Override
     public MyPage<Map<String, Object>> search(Integer pageNo, Integer pageSize, String keyword) {
         if (pageSize == null)
@@ -66,6 +62,7 @@ public class TopicService implements ITopicService {
         MyPage<Map<String, Object>> page = new MyPage<>(pageNo, Integer.parseInt(systemConfigService.selectAllConfig()
                 .get("page_size").toString()));
         page = topicMapper.selectAll(page, tab);
+
         // 查询话题的标签
         tagService.selectTagsByTopicId(page);
         return page;
