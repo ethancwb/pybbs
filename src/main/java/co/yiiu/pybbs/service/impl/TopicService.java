@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -49,6 +50,10 @@ public class TopicService implements ITopicService {
     private INotificationService notificationService;
     @Autowired
     private IndexedService indexedService;
+
+    private final List<String> defaultTab = Arrays.asList("hot", "good", "noanswer", "newest", "all");
+    private final List<String> defaultTag = Arrays.asList("job", "location", "school", "academic", "hobby", "manage", "other");
+
     @Override
     public MyPage<Map<String, Object>> search(Integer pageNo, Integer pageSize, String keyword) {
         if (pageSize == null)
@@ -59,9 +64,16 @@ public class TopicService implements ITopicService {
 
     @Override
     public MyPage<Map<String, Object>> selectAll(Integer pageNo, String tab) {
+        boolean found = false;
+        String[] strings = new String[]{};
         MyPage<Map<String, Object>> page = new MyPage<>(pageNo, Integer.parseInt(systemConfigService.selectAllConfig()
                 .get("page_size").toString()));
-        page = topicMapper.selectAll(page, tab);
+
+        if(defaultTab.contains(tab)){
+            page = topicMapper.selectAll(page, tab);
+        } else if (defaultTag.contains(tab)){
+            page = topicMapper.selectByTag(page, tab);
+        }
 
         // 查询话题的标签
         tagService.selectTagsByTopicId(page);

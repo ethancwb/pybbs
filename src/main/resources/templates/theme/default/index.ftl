@@ -22,14 +22,20 @@
                         <li class="nav-item"><a class="nav-link <#if tab=="job">active</#if>"
                                                 href="/?tab=job">求职</a>
                         </li>
+                        <li class="nav-item"><a class="nav-link <#if tab=="location">active</#if>"
+                            href="/?tab=location">同城</a>
+                        </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="yuepao">active</#if>"
-                            href="/?tab=yuepao">同城</a>
+                                                href="/?tab=school">学校</a>
                         </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="academic">active</#if>"
                             href="/?tab=academic">学术</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link <#if tab=="hobbies">active</#if>"
-                            href="/?tab=hobbies">爱好</a>
+                        <li class="nav-item"><a class="nav-link <#if tab=="hobby">active</#if>"
+                            href="/?tab=hobby">爱好</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link <#if tab=="manage">active</#if>"
+                                                href="/?tab=manage">管理</a>
                         </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="else">active</#if>"
                             href="/?tab=else">其他</a>
