@@ -530,14 +530,14 @@ table.CodeRay td.code>pre{padding:0}
 <p>如果你服务器上就只一个论坛项目，那直接将程序里的端口改成80即可，如果你还想折腾点其它的东西，那就要用到nginx做代理转发请求了，具体配置如下</p>
 </div>
 <div class="paragraph">
-<p>假如 example.com 是你的域名，程序启动端口是 8080 ，配置如下</p>
+<p>假如 example.com 是你的域名，程序启动端口是 8088 ，配置如下</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="nginx">server {
   server_name example.com;
   location / {
-    proxy_pass http://127.0.0.1:8080/;
+    proxy_pass http://127.0.0.1:8088/;
     proxy_redirect          off;
     proxy_set_header        Host            $host;
     proxy_set_header        X-Real-IP       $remote_addr;

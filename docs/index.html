@@ -799,7 +799,7 @@ table.CodeRay td.code>pre{padding:0}
 <p>找到`co.yiiu.pybbs.PybbsApplication`类，直接运行main方法即可启动</p>
 </li>
 <li>
-<p>浏览器运行 <code>http://localhost:8080</code> , 后台地址 <code>http://localhost:8080/adminlogin</code> 后台用户名 admin 密码 123123</p>
+<p>浏览器运行 <code>http://localhost:8088</code> , 后台地址 <code>http://localhost:8088/adminlogin</code> 后台用户名 admin 密码 123123</p>
 </li>
 </ul>
 </div>
@@ -842,7 +842,7 @@ table.CodeRay td.code>pre{padding:0}
 <p>查看服务是否启动 <code>ps -ef|grep pybbs</code> 如果有pybbs的进程，就说明服务启动了</p>
 </li>
 <li>
-<p>浏览器运行 <code>http://localhost:8080</code> , 后台地址 <code>http://localhost:8080/adminlogin</code> 后台用户名 admin 密码 123123</p>
+<p>浏览器运行 <code>http://localhost:8088</code> , 后台地址 <code>http://localhost:8088/adminlogin</code> 后台用户名 admin 密码 123123</p>
 </li>
 <li>
 <p>网站的其它配置，参见文档</p>
@@ -867,7 +867,7 @@ table.CodeRay td.code>pre{padding:0}
 <p>运行 <code>docker-compose up -d</code> 命令启动容器，-d是后台运行的意思</p>
 </li>
 <li>
-<p>浏览器运行 <code>http://localhost:8080</code> , 后台地址 <code>http://localhost:8080/adminlogin</code> 后台用户名 admin 密码 123123</p>
+<p>浏览器运行 <code>http://localhost:8088</code> , 后台地址 <code>http://localhost:8088/adminlogin</code> 后台用户名 admin 密码 123123</p>
 </li>
 <li>
 <p>关闭容器 <code>docker-compose down</code></p>
@@ -950,7 +950,7 @@ table.CodeRay td.code>pre{padding:0}
 <p>打包成功后，找到target里的`pybbs.war`，将其拷贝到tomcat下的webapps里，启动tomcat即可</p>
 </li>
 <li>
-<p>浏览器运行 <code>http://localhost:8080</code> , 后台地址 <code>http://localhost:8080/adminlogin</code> 后台用户名 admin 密码 123123</p>
+<p>浏览器运行 <code>http://localhost:8088</code> , 后台地址 <code>http://localhost:8088/adminlogin</code> 后台用户名 admin 密码 123123</p>
 </li>
 </ul>
 </div>
@@ -1215,7 +1215,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="sect2">
 <h3 id="静态文件访问地址"><a class="anchor" href="#静态文件访问地址"></a>静态文件访问地址</h3>
 <div class="paragraph">
-<p>默认给的是 <code>http://localhost:8080/static/upload/</code> 如果你的访问域名是 <code>http://example.com</code> 那这里就要换成 <code>http://example.com/static/upload/</code></p>
+<p>默认给的是 <code>http://localhost:8088/static/upload/</code> 如果你的访问域名是 <code>http://example.com</code> 那这里就要换成 <code>http://example.com/static/upload/</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -1468,14 +1468,14 @@ table.CodeRay td.code>pre{padding:0}
 <p>如果你服务器上就只一个论坛项目，那直接将程序里的端口改成80即可，如果你还想折腾点其它的东西，那就要用到nginx做代理转发请求了，具体配置如下</p>
 </div>
 <div class="paragraph">
-<p>假如 example.com 是你的域名，程序启动端口是 8080 ，配置如下</p>
+<p>假如 example.com 是你的域名，程序启动端口是 8088 ，配置如下</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="nginx">server {
   server_name example.com;
   location / {
-    proxy_pass http://127.0.0.1:8080/;
+    proxy_pass http://127.0.0.1:8088/;
     proxy_redirect          off;
     proxy_set_header        Host            $host;
     proxy_set_header        X-Real-IP       $remote_addr;
@@ -2667,7 +2667,7 @@ table.CodeRay td.code>pre{padding:0}
     <span class="key"><span class="delimiter">&quot;</span><span class="content">records</span><span class="delimiter">&quot;</span></span>:[
       {
         <span class="key"><span class="delimiter">&quot;</span><span class="content">collectCount</span><span class="delimiter">&quot;</span></span>:<span class="integer">0</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">我是一个话题标题</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">userId</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">good</span><span class="delimiter">&quot;</span></span>:<span class="value">false</span>,
@@ -2742,7 +2742,7 @@ table.CodeRay td.code>pre{padding:0}
       <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">username</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">tomoya</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">telegramName</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">email</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">website</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">bio</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
@@ -2800,7 +2800,7 @@ table.CodeRay td.code>pre{padding:0}
       <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: <span class="integer">2</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">username</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">telegramName</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">email</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">website</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">bio</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
@@ -2893,7 +2893,7 @@ table.CodeRay td.code>pre{padding:0}
       <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: <span class="integer">2</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">username</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">telegramName</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">email</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">mobile</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">13111111111</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">website</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
@@ -2997,7 +2997,7 @@ table.CodeRay td.code>pre{padding:0}
   <span class="key"><span class="delimiter">&quot;</span><span class="content">description</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">SUCCESS</span><span class="delimiter">&quot;</span></span>,
   <span class="key"><span class="delimiter">&quot;</span><span class="content">detail</span><span class="delimiter">&quot;</span></span>: {
     <span class="key"><span class="delimiter">&quot;</span><span class="content">errors</span><span class="delimiter">&quot;</span></span>: [],
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">urls</span><span class="delimiter">&quot;</span></span>: [<span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>]
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">urls</span><span class="delimiter">&quot;</span></span>: [<span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>]
   }
 }</code></pre>
 </div>
@@ -3047,7 +3047,7 @@ table.CodeRay td.code>pre{padding:0}
         <span class="key"><span class="delimiter">&quot;</span><span class="content">commentId</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">upIds</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">2</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">username</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">tomoya</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">layer</span><span class="delimiter">&quot;</span></span>: <span class="integer">0</span>
       },
       {
@@ -3059,7 +3059,7 @@ table.CodeRay td.code>pre{padding:0}
         <span class="key"><span class="delimiter">&quot;</span><span class="content">commentId</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">upIds</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">username</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">layer</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>
       },
       {
@@ -3071,7 +3071,7 @@ table.CodeRay td.code>pre{padding:0}
         <span class="key"><span class="delimiter">&quot;</span><span class="content">commentId</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">upIds</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">username</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">layer</span><span class="delimiter">&quot;</span></span>: <span class="integer">0</span>
       }
     ],
@@ -3093,7 +3093,7 @@ table.CodeRay td.code>pre{padding:0}
       <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">username</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">tomoya</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">telegramName</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">email</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">website</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">bio</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
@@ -3676,7 +3676,7 @@ table.CodeRay td.code>pre{padding:0}
         <span class="key"><span class="delimiter">&quot;</span><span class="content">action</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">COMMENT</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">targetUserId</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">我是一个话题标题</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">userId</span><span class="delimiter">&quot;</span></span>: <span class="integer">2</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">我是第二条评论</span><span class="delimiter">&quot;</span></span>,
@@ -3691,7 +3691,7 @@ table.CodeRay td.code>pre{padding:0}
         <span class="key"><span class="delimiter">&quot;</span><span class="content">action</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">REPLY</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">targetUserId</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: <span class="integer">2</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">我是一个话题标题</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">userId</span><span class="delimiter">&quot;</span></span>: <span class="integer">2</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">@tomoya 我是第三条评论</span><span class="delimiter">&quot;</span></span>,
@@ -3704,7 +3704,7 @@ table.CodeRay td.code>pre{padding:0}
         <span class="key"><span class="delimiter">&quot;</span><span class="content">action</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">COMMENT</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">targetUserId</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: <span class="integer">3</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/test/avatar.png</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">我是一个话题标题</span><span class="delimiter">&quot;</span></span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">userId</span><span class="delimiter">&quot;</span></span>: <span class="integer">2</span>,
         <span class="key"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">@tomoya 我是第三条评论</span><span class="delimiter">&quot;</span></span>,
@@ -3799,7 +3799,7 @@ table.CodeRay td.code>pre{padding:0}
       <span class="key"><span class="delimiter">&quot;</span><span class="content">records</span><span class="delimiter">&quot;</span></span>: [
         {
           <span class="key"><span class="delimiter">&quot;</span><span class="content">collectCount</span><span class="delimiter">&quot;</span></span>: <span class="integer">2</span>,
-          <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
           <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">我是一个话题标题</span><span class="delimiter">&quot;</span></span>,
           <span class="key"><span class="delimiter">&quot;</span><span class="content">userId</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
           <span class="key"><span class="delimiter">&quot;</span><span class="content">good</span><span class="delimiter">&quot;</span></span>: <span class="value">false</span>,
@@ -3825,7 +3825,7 @@ table.CodeRay td.code>pre{padding:0}
       <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">username</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">tomoya</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">telegramName</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">email</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">py2qiuse@gmail.com</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">website</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">https://17dev.club/</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">bio</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">hello world</span><span class="delimiter">&quot;</span></span>,
@@ -3876,7 +3876,7 @@ table.CodeRay td.code>pre{padding:0}
       <span class="key"><span class="delimiter">&quot;</span><span class="content">records</span><span class="delimiter">&quot;</span></span>: [
         {
           <span class="key"><span class="delimiter">&quot;</span><span class="content">collectCount</span><span class="delimiter">&quot;</span></span>: <span class="integer">2</span>,
-          <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
           <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">我是一个话题标题</span><span class="delimiter">&quot;</span></span>,
           <span class="key"><span class="delimiter">&quot;</span><span class="content">userId</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
           <span class="key"><span class="delimiter">&quot;</span><span class="content">good</span><span class="delimiter">&quot;</span></span>: <span class="value">false</span>,
@@ -3901,7 +3901,7 @@ table.CodeRay td.code>pre{padding:0}
       <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">username</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">tomoya</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">telegramName</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">email</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">py2qiuse@gmail.com</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">website</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">https://17dev.club/</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">bio</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">hello world</span><span class="delimiter">&quot;</span></span>,
@@ -3972,7 +3972,7 @@ table.CodeRay td.code>pre{padding:0}
       <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">username</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">tomoya</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">telegramName</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">email</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">py2qiuse@gmail.com</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">website</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">https://17dev.club/</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">bio</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">hello world</span><span class="delimiter">&quot;</span></span>,
@@ -4023,7 +4023,7 @@ table.CodeRay td.code>pre{padding:0}
       <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">username</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">tomoya</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">telegramName</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>,
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">email</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">py2qiuse@gmail.com</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">website</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">https://17dev.club/</span><span class="delimiter">&quot;</span></span>,
       <span class="key"><span class="delimiter">&quot;</span><span class="content">bio</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">hello world</span><span class="delimiter">&quot;</span></span>,
@@ -4035,7 +4035,7 @@ table.CodeRay td.code>pre{padding:0}
       <span class="key"><span class="delimiter">&quot;</span><span class="content">records</span><span class="delimiter">&quot;</span></span>: [
         {
           <span class="key"><span class="delimiter">&quot;</span><span class="content">collectCount</span><span class="delimiter">&quot;</span></span>: <span class="integer">2</span>,
-          <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">avatar</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8088/static/upload/avatar/tomoya/avatar.png</span><span class="delimiter">&quot;</span></span>,
           <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">我是一个话题标题</span><span class="delimiter">&quot;</span></span>,
           <span class="key"><span class="delimiter">&quot;</span><span class="content">userId</span><span class="delimiter">&quot;</span></span>: <span class="integer">1</span>,
           <span class="key"><span class="delimiter">&quot;</span><span class="content">good</span><span class="delimiter">&quot;</span></span>: <span class="value">false</span>,

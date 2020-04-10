@@ -27,7 +27,7 @@ services:
       - ./logs:/app/logs
       - ./static:/app/static
     ports:
-      - "8080:8080"
+      - "8088:8088"
     command: mvn clean spring-boot:run -Dspring-boot.run.profiles=docker -Dmaven.test.skip=true
     depends_on:
       - mysql
