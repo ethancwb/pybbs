@@ -40,7 +40,7 @@
                     </li>
                     <li class="nav-item <#if page_tab == "user">active</#if>">
                         <a href="/user/${_user.username}" class="nav-link">
-                            <i class="fa fa-user"></i> ${_user.username}
+                            <i class="fa fa-user"></i> 我的帖子
                         </a>
                     </li>
                     <li class="nav-item <#if page_tab == "settings">active</#if>">

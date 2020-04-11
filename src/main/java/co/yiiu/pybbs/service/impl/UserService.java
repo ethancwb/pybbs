@@ -91,7 +91,7 @@ public class UserService implements IUserService {
         if (!StringUtils.isEmpty(password)) user.setPassword(new BCryptPasswordEncoder().encode(password));
         user.setToken(token);
         user.setInTime(new Date());
-        if (avatar == null) avatar = "/common/kaopu"; //TODO avatar path
+        if (avatar == null) avatar = "/static/theme/default/images/avatar-placeholder.png"; //TODO avatar path
         user.setAvatar(avatar);
         user.setEmail(email);
         user.setBio(bio);

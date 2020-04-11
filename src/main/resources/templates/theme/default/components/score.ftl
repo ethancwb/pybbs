@@ -15,9 +15,9 @@
             </#if>
             <@tag_score limit=limit>
                 <#list users as user>
-                    <tr>
-                        <td><a href="/user/${user.username}">${user.username}</a></td>
-                        <td>${user.score}</td>
+                    <tr class="row">
+                        <td class="col-sm-6" style="padding-left: 2.5rem"><a href="/user/${user.username}">${user.username}</a></td>
+                        <td class="col-sm-6 ml-auto text-right" style="padding-right: 2.5rem">${user.score}</td>
                     </tr>
                 </#list>
             </@tag_score>
