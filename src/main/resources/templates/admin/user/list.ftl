@@ -6,8 +6,8 @@
             <small>列表</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="/admin/user/list">用户</a></li>
+            <li><a href="/kaopu/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="/kaopu/admin/user/list">用户</a></li>
             <li class="active">列表</li>
         </ol>
     </section>
@@ -46,7 +46,7 @@
                             <td>${user.inTime?datetime}</td>
                             <td>
                                 <#if sec.hasPermission("user:edit")>
-                                    <a href="/admin/user/edit?id=${user.id}" class="btn btn-xs btn-warning">编辑</a>
+                                    <a href="/kaopu/admin/user/edit?id=${user.id}" class="btn btn-xs btn-warning">编辑</a>
                                 </#if>
                                 <#if sec.hasPermission("user:delete")>
                                     <button onclick="deleteUser('${user.id}')" class="btn btn-xs btn-danger">删除</button>

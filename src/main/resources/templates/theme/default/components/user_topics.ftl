@@ -12,15 +12,15 @@
                         <div class="media">
                             <div class="media-body">
                                 <div class="title">
-                                    <a href="/topic/${topic.id}">
+                                    <a href="/kaopu/topic/${topic.id}">
                                         ${topic.title!?html}
                                     </a>
                                 </div>
                                 <div>
-                                    <span><a href="/user/${topic.username}">${topic.username}</a></span>
+                                    <span><a href="/kaopu/user/${topic.username}">${topic.username}</a></span>
                                     <span class="hidden-sm hidden-xs">•</span>
                                     <span class="hidden-sm hidden-xs"><a
-                                                href="/topic/${topic.id}">${topic.commentCount}个评论</a></span>
+                                                href="/kaopu/topic/${topic.id}">${topic.commentCount}个评论</a></span>
                                     <span class="hidden-sm hidden-xs">•</span>
                                     <span class="hidden-sm hidden-xs">${topic.view}次浏览</span>
                                     <span>•</span>
@@ -39,7 +39,7 @@
                 </div>
                 <#if isFooter>
                     <div class="card-footer">
-                        <a href="/user/${username}/topics">${username}更多话题&gt;&gt;</a>
+                        <a href="/kaopu/user/${username}/topics">${username}更多话题&gt;&gt;</a>
                     </div>
                 </#if>
             </#if>

@@ -6,8 +6,8 @@
             <small>列表</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="/admin/permission/list">权限</a></li>
+            <li><a href="/kaopu/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="/kaopu/admin/permission/list">权限</a></li>
             <li class="active">列表</li>
         </ol>
     </section>
@@ -34,7 +34,7 @@
                                             <a href="javascript:;" class="text-danger"
                                                onclick="deletePermission(${permission.id})">删除</a>
                                         </#if>
-                                        <a href="/admin/permission/list?pid=${permission.id!}">
+                                        <a href="/kaopu/admin/permission/list?pid=${permission.id!}">
                                             ${permission.name!}
                                         </a>
                                     </li>

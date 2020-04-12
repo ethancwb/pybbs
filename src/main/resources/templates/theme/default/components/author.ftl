@@ -4,12 +4,12 @@
     </div>
     <div class="card-body">
         <div class="media">
-            <a href="/user/${topicUser.username}" class="mr-3">
+            <a href="/kaopu/user/${topicUser.username}" class="mr-3">
                 <img src="${topicUser.avatar!}" title="${topicUser.username}" class="avatar"/>
             </a>
             <div class="media-body">
                 <div class="media-heading">
-                    <a href="/user/${topicUser.username!}">${topicUser.username}</a>
+                    <a href="/kaopu/user/${topicUser.username!}">${topicUser.username}</a>
                 </div>
                 <p>积分：${topicUser.score}</p>
             </div>
