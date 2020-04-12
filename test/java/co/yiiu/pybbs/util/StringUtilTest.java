@@ -1,4 +1,4 @@
-package co.yiiu.pybbs.util;
+package java.co.yiiu.pybbs.util;
 
 import co.yiiu.pybbs.util.bcrypt.BCryptPasswordEncoder;
 import org.junit.Test;
@@ -11,7 +11,7 @@ public class StringUtilTest {
     @Test
     public void check() {
         String username = "admin@dhajksd.ahsd.xyz";
-        System.out.println(StringUtil.check(username, StringUtil.USERNAMEREGEX));
+        System.out.println(co.yiiu.pybbs.util.StringUtil.check(username, co.yiiu.pybbs.util.StringUtil.USERNAMEREGEX));
 
         System.out.println(new BCryptPasswordEncoder().encode("123123"));
     }
