@@ -9,7 +9,7 @@
         <b>${tag.name}</b>&nbsp;
         <span>共有 ${tag.topicCount!0} 篇话题</span>
         <#if _user??>
-          <a class="pull-right" href="/topic/create?tag=${tag.name}">发布话题</a>
+          <a class="pull-right" href="/kaopu/topic/create?tag=${tag.name}">发布话题</a>
         </#if>
       </td>
     </tr>

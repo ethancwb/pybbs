@@ -6,8 +6,8 @@
             <small>列表</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="/admin/index"><i class="fa fa-dashboard"></i>首页</a></li>
-            <li><a href="/admin/sensitive_word/list">敏感词</a></li>
+            <li><a href="/kaopu/admin/index"><i class="fa fa-dashboard"></i>首页</a></li>
+            <li><a href="/kaopu/admin/sensitive_word/list">敏感词</a></li>
             <li class="active">列表</li>
         </ol>
     </section>

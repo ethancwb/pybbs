@@ -6,8 +6,8 @@
             <small>编辑</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="/admin/user/list">用户</a></li>
+            <li><a href="/kaopu/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="/kaopu/admin/user/list">用户</a></li>
             <li class="active">编辑</li>
         </ol>
     </section>

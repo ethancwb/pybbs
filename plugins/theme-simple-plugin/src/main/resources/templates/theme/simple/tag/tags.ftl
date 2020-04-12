@@ -7,7 +7,7 @@
           <#if tag.icon??>
             <img src="${tag.icon}" width="24" style="vertical-align: middle;" alt="">
           </#if>
-          <b><a href="/topic/tag/${tag.name}">${tag.name}</a></b> X ${tag.topicCount!0}
+          <b><a href="/kaopu/topic/tag/${tag.name}">${tag.name}</a></b> X ${tag.topicCount!0}
           <#if tag.description??>
             <div class="description">${tag.description}</div>
           </#if>
@@ -18,7 +18,7 @@
       </#list>
       <div class="clear"></div>
       <#if page.current < page.pages>
-        <a href="/tags?pageNo=${page.current + 1}">查看更多</a>
+        <a href="/kaopu/tags?pageNo=${page.current + 1}">查看更多</a>
       </#if>
     </@tag_tags>
   </div>

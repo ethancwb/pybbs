@@ -8,7 +8,7 @@
           <td width="30">
             <img src="${user.avatar!}" style="vertical-align: middle;" width="24" alt="">
           </td>
-          <td><a href="/user/${user.username}">${user.username}</a></td>
+          <td><a href="/kaopu/user/${user.username}">${user.username}</a></td>
           <td align="right">${user.score!0}</td>
         </tr>
       </#list>

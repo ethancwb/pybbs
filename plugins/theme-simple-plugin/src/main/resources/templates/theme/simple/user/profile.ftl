@@ -6,8 +6,8 @@
       <div style="margin-top: 10px;">
         <div style="font-size: 18px;">${user.username}</div>
         <ul style="font-size: 14px;">
-          <li>积分: <a href="/top100">${user.score!0}</a></li>
-          <li>收藏话题: <a href="/user/${user.username}/collects">${collectCount!0}</a></li>
+          <li>积分: <a href="/kaopu/top100">${user.score!0}</a></li>
+          <li>收藏话题: <a href="/kaopu/user/${user.username}/collects">${collectCount!0}</a></li>
           <li>入驻时间: ${model.formatDate(user.inTime)}</li>
           <#if user.email?? && user.email != "">
             <li><a href="mailto:${user.email}">${user.email}</a></li>
@@ -27,14 +27,14 @@
     <div class="right">
       <div>
         <b>${username} 近期的话题</b>
-        <a href="/user/${username}/topics" class="pull-right">查看更多</a>
+        <a href="/kaopu/user/${username}/topics" class="pull-right">查看更多</a>
         <hr>
         <#include "../components/user_topics.ftl"/>
         <@user_topics username=username pageNo=1 pageSize=10/>
       </div>
       <div>
         <b>${username} 参与的评论</b>
-        <a href="/user/${username}/comments" class="pull-right">查看更多</a>
+        <a href="/kaopu/user/${username}/comments" class="pull-right">查看更多</a>
         <hr>
         <#include "../components/user_comments.ftl"/>
         <@user_comments username=username pageNo=1 pageSize=10/>
