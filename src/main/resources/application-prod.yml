@@ -8,6 +8,12 @@ site:
   datasource_username: root
   datasource_password: dangerous
 
+server:
+  port: 8088
+  servlet:
+    context-path:
+      /kaopu
+
 # 想看mybatis执行的sql的时候，去掉下面这段的注释
 #logging:
 #  level:

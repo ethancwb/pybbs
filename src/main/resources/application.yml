@@ -1,5 +1,9 @@
 server:
   port: 8088
+  servlet:
+    context-path:
+      /kaopu
+
 spring:
   profiles:
     active: dev

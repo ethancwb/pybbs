@@ -11,3 +11,7 @@ site:
 #      yiiu:
 #        pybbs:
 #          mapper: debug
+
+server:
+  servlet:
+    context-path: /kaopu
