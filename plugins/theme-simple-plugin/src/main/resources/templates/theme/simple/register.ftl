@@ -15,7 +15,7 @@
         <tr>
           <td>验证码</td>
           <td><input type="text" name="captcha" id="captcha" placeholder="验证码"/></td>
-          <td width="122" align="right"><img src="/common/captcha" id="captchaImage" onclick="changeCaptcha()"/></td>
+          <td width="122" align="right"><img src="/kaopu/common/captcha" id="captchaImage" onclick="changeCaptcha()"/></td>
         </tr>
       </table>
     </div>
@@ -27,7 +27,7 @@
   <script>
     function changeCaptcha() {
       var date = new Date();
-      $("#captchaImage").attr("src", "/common/captcha?ver=" + date.getTime());
+      $("#captchaImage").attr("src", "/kaopu/common/captcha?ver=" + date.getTime());
     }
     function register() {
       var username = $("#username").val();
@@ -59,7 +59,7 @@
         }),
         success: function(data) {
           if (data.code === 200) {
-            window.location.href = "/";
+            window.location.href = "/kaopu/";
           } else {
             alert(data.description);
           }

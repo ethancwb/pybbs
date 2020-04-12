@@ -55,11 +55,11 @@
     </div>
     <script>
         $(function () {
-            $(".captcha").attr('src', "/common/captcha?ver=" + new Date().getTime());
+            $(".captcha").attr('src', "/kaopu/common/captcha?ver=" + new Date().getTime());
             $(".captcha").click(function () {
                 $(".captcha").each(function () {
                     var date = new Date();
-                    $(this).attr("src", "/common/captcha?ver=" + date.getTime());
+                    $(this).attr("src", "/kaopu/common/captcha?ver=" + date.getTime());
                 });
             });
             $("#register_btn").click(function () {
