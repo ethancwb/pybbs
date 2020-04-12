@@ -36,7 +36,7 @@
         </div>
     </div>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.css" rel="stylesheet">
-    <script src="/static/theme/default/js/codemirror.js"></script>
+    <script src="/kaopu/static/theme/default/js/codemirror.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/markdown/markdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/addon/display/placeholder.min.js"></script>
     <script>

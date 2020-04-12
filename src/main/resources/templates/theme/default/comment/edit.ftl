@@ -29,7 +29,7 @@
             border-top: 0;
         }
     </style>
-    <script src="/static/theme/default/js/codemirror.js"></script>
+    <script src="/kaopu/static/theme/default/js/codemirror.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/markdown/markdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/addon/display/placeholder.min.js"></script>
     <script>

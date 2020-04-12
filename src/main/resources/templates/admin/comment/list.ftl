@@ -18,7 +18,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form action="/admin/comment/list" class="form-inline">
+                <form action="/kaopu/admin/comment/list" class="form-inline">
                     <div class="form-group" style="margin-bottom: 10px;">
                         <input type="text" readonly id="startDate" name="startDate" value="${startDate!}"
                                class="form-control" placeholder="开始时间">
@@ -64,7 +64,7 @@
             </div>
         </div>
         <#include "../layout/paginate.ftl">
-        <@paginate currentPage=page.current totalPage=page.pages actionUrl="/admin/comment/list"
+        <@paginate currentPage=page.current totalPage=page.pages actionUrl="/kaopu/admin/comment/list"
         urlParas="&startDate=${startDate!}&endDate=${endDate!}&username=${username!}"/>
     </section>
     <script>
@@ -88,7 +88,7 @@
 
         function deleteBtn(id) {
             if (confirm('确定要删除这条评论吗？')) {
-                $.get("/admin/comment/delete?id=" + id, function (data) {
+                $.get("/kaopu/admin/comment/delete?id=" + id, function (data) {
                     if (data.code === 200) {
                         toast("成功", "success");
                         setTimeout(function () {

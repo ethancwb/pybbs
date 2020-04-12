@@ -54,7 +54,7 @@
 
         function deleteRole(id) {
             if (confirm("确定要删除这个角色？")) {
-                $.get("/admin/role/delete?id=" + id, function (data) {
+                $.get("/kaopu/admin/role/delete?id=" + id, function (data) {
                     if (data.code === 200) {
                         toast("成功", "success");
                         setTimeout(function () {

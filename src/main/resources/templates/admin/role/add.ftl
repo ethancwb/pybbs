@@ -18,7 +18,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form id="form" action="/admin/role/add" method="post">
+                <form id="form" action="/kaopu/admin/role/add" method="post">
                     <div class="form-group">
                         <label>角色名</label>
                         <input type="text" name="name" class="form-control" placeholder="角色名">

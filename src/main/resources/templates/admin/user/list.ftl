@@ -18,7 +18,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form action="/admin/user/list" class="form-inline">
+                <form action="/kaopu/admin/user/list" class="form-inline">
                     <div class="form-group" style="margin-bottom: 10px;">
                         <input type="text" id="username" name="username" value="${username!}" class="form-control"
                                placeholder="用户名">
@@ -59,14 +59,14 @@
             </div>
         </div>
         <#include "../layout/paginate.ftl">
-        <@paginate currentPage=page.current totalPage=page.pages actionUrl="/admin/user/list" urlParas=""/>
+        <@paginate currentPage=page.current totalPage=page.pages actionUrl="/kaopu/admin/user/list" urlParas=""/>
     </section>
     <script>
         <#if sec.hasPermission("user:delete")>
 
         function deleteUser(id) {
             if (confirm("确定要删除这个用户吗？\n 删除用户后，它发的帖子评论以及收藏就都没了，还请三思!!")) {
-                $.get("/admin/user/delete?id=" + id, function (data) {
+                $.get("/kaopu/admin/user/delete?id=" + id, function (data) {
                     if (data.code === 200) {
                         toast("删除成功", "success");
                         setTimeout(function () {

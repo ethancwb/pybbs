@@ -18,7 +18,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form id="form" action="/admin/role/edit" method="post">
+                <form id="form" action="/kaopu/admin/role/edit" method="post">
                     <input type="hidden" name="id" value="${role.id}">
                     <div class="form-group">
                         <label>角色名</label>

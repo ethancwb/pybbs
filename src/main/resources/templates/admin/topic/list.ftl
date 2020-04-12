@@ -26,7 +26,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form action="/admin/topic/list" class="form-inline">
+                <form action="/kaopu/admin/topic/list" class="form-inline">
                     <div class="form-group" style="margin-bottom: 10px;">
                         <input type="text" readonly id="startDate" name="startDate" value="${startDate!}"
                                class="form-control" placeholder="开始时间">
@@ -110,7 +110,7 @@
             </div>
         </div>
         <#include "../layout/paginate.ftl">
-        <@paginate currentPage=page.current totalPage=page.pages actionUrl="/admin/topic/list"
+        <@paginate currentPage=page.current totalPage=page.pages actionUrl="/kaopu/admin/topic/list"
         urlParas="&startDate=${startDate!}&endDate=${endDate!}&username=${username!}"/>
     </section>
     <script>
@@ -164,7 +164,7 @@
 
         function index_topic(id) {
             if (confirm("确定要单独索引这个话题吗？")) {
-                $.get("/admin/topic/index?id=" + id, function (data) {
+                $.get("/kaopu/admin/topic/index?id=" + id, function (data) {
                     if (data.code === 200) {
                         toast("成功", "success");
                     } else {
@@ -179,7 +179,7 @@
 
         function index_all_topic() {
             if (confirm("如果话题数量很多的话，这个操作会非常耗时，点击确定继续")) {
-                $.get("/admin/topic/index_all", function (data) {
+                $.get("/kaopu/admin/topic/index_all", function (data) {
                     if (data.code === 200) {
                         toast("成功", "success");
                     } else {
@@ -194,7 +194,7 @@
 
         function delete_all_index() {
             if (confirm("删除了所有话题索引，用户就搜不到数据了，确定吗？")) {
-                $.get("/admin/topic/delete_all_index", function (data) {
+                $.get("/kaopu/admin/topic/delete_all_index", function (data) {
                     if (data.code === 200) {
                         toast("成功", "success");
                     } else {
@@ -209,7 +209,7 @@
 
         function delete_index(id) {
             if (confirm("确定要删除这个话题的索引吗？")) {
-                $.get("/admin/topic/delete_index?id=" + id, function (data) {
+                $.get("/kaopu/admin/topic/delete_index?id=" + id, function (data) {
                     if (data.code === 200) {
                         toast("成功", "success");
                     } else {

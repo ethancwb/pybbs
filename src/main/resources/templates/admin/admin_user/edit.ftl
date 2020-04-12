@@ -20,7 +20,7 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-sm-6">
-                        <form id="form" action="/admin/admin_user/edit" method="post">
+                        <form id="form" action="/kaopu/admin/admin_user/edit" method="post">
                             <input type="hidden" name="id" value="${adminUser.id}">
                             <div class="form-group">
                                 <label>用户名</label>

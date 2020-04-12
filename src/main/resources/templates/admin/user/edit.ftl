@@ -70,7 +70,7 @@
                   <script>
                     function refreshToken(self) {
                         $(self).button("loading");
-                        $.get("/admin/user/refreshToken?id=${user.id}", function (data) {
+                        $.get("/kaopu/admin/user/refreshToken?id=${user.id}", function (data) {
                             if (data.code === 200) {
                                 toast("成功", "success");
                                 $("#token").val(data.detail.token);
@@ -104,11 +104,11 @@
         $(function () {
             // 保存用户信息
             $("#btn").click(function () {
-                $.post("/admin/user/edit", $("#form").serialize(), function (data) {
+                $.post("/kaopu/admin/user/edit", $("#form").serialize(), function (data) {
                     if (data.code === 200) {
                         toast("编辑成功", "success");
                         setTimeout(function () {
-                            window.location.href = "/admin/user/list";
+                            window.location.href = "/kaopu/admin/user/list";
                         }, 700);
                     } else {
                         toast(data.description);

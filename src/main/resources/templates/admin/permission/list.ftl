@@ -146,11 +146,11 @@
 
         function deletePermission(id) {
             if (confirm('确定要删除这个权限吗？')) {
-                $.get("/admin/permission/delete?id=" + id, function (data) {
+                $.get("/kaopu/admin/permission/delete?id=" + id, function (data) {
                     if (data.code === 200) {
                         toast("成功", "success");
                         setTimeout(function () {
-                            window.location.href = "/admin/permission/list";
+                            window.location.href = "/kaopu/admin/permission/list";
                         }, 700);
                     } else {
                         toast(data.description);
@@ -174,13 +174,13 @@
                 return;
             }
             var id = $("#id").val();
-            var url = "/admin/permission/add";
-            if (id) url = "/admin/permission/edit";
+            var url = "/kaopu/admin/permission/add";
+            if (id) url = "/kaopu/admin/permission/edit";
             $.post(url, $("#form").serialize(), function (data) {
                 if (data.code === 200) {
                     toast("成功", "success");
                     setTimeout(function () {
-                        window.location.href = "/admin/permission/list?pid=" + data.detail;
+                        window.location.href = "/kaopu/admin/permission/list?pid=" + data.detail;
                     }, 700);
                 } else {
                     toast(data.description);

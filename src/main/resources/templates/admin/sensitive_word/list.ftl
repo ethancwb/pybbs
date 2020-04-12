@@ -22,7 +22,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form action="/admin/sensitive_word/list" class="form-inline">
+                <form action="/kaopu/admin/sensitive_word/list" class="form-inline">
                     <div class="form-group" style="margin-bottom: 10px;">
                         <input type="text" name="word" value="${word!}" class="form-control" placeholder="敏感词">
                         <button type="submit" class="btn btn-primary btn-sm">搜索</button>
@@ -91,7 +91,7 @@
             </div>
         </#if>
         <#include "../layout/paginate.ftl">
-        <@paginate currentPage=page.current totalPage=page.pages actionUrl="/admin/sensitive_word/list" urlParas="&word=${word!}"/>
+        <@paginate currentPage=page.current totalPage=page.pages actionUrl="/kaopu/admin/sensitive_word/list" urlParas="&word=${word!}"/>
     </section>
     <script>
         <#if sec.hasPermission("sensitive_word:import")>
@@ -107,7 +107,7 @@
             var fd = new FormData();
             fd.append("file", excelFileDom.files[0]);
             $.post({
-                url: "/admin/sensitive_word/import",
+                url: "/kaopu/admin/sensitive_word/import",
                 data: fd,
                 dataType: 'json',
                 processData: false,
@@ -172,7 +172,7 @@
 
         function deleteBtn(id) {
             if (confirm('确定要删除这个敏感词吗？')) {
-                $.get("/admin/sensitive_word/delete?id=" + id, function (data) {
+                $.get("/kaopu/admin/sensitive_word/delete?id=" + id, function (data) {
                     if (data.code === 200) {
                         toast("成功", "success");
                         setTimeout(function () {

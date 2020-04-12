@@ -47,7 +47,7 @@
             border: 1px solid #ddd;
         }
     </style>
-    <script src="/static/theme/default/js/codemirror.js"></script>
+    <script src="/kaopu/static/theme/default/js/codemirror.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/markdown/markdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/addon/display/placeholder.min.js"></script>
     <script>
@@ -75,7 +75,7 @@
                     toast("请输入标签，且最多只能填5个");
                     return;
                 }
-                $.post("/admin/topic/edit", {
+                $.post("/kaopu/admin/topic/edit", {
                     id: ${topic.id},
                     title: title,
                     content: content,
@@ -84,7 +84,7 @@
                     if (data.code === 200) {
                         toast("更新成功", "success");
                         setTimeout(function () {
-                            window.location.href = "/admin/topic/list";
+                            window.location.href = "/kaopu/admin/topic/list";
                         }, 700);
                     } else {
                         toast(data.description);

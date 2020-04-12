@@ -104,7 +104,7 @@
                 // TODO 增加相应输入框红色边框，提示用户应该配置哪地方
             } else {
                 $.ajax({
-                    url: "/admin/system/edit",
+                    url: "/kaopu/admin/system/edit",
                     contentType: "application/json; charset=utf-8",
                     type: 'post',
                     dataType: 'json',

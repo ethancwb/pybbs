@@ -21,7 +21,7 @@
                     <script>
                         function asyncTopicCount() {
                             if (confirm('如果标签数比较多，这个操作会很耗费时间，确定继续吗？')) {
-                                $.get("/admin/tag/async", function (data) {
+                                $.get("/kaopu/admin/tag/async", function (data) {
                                     if (data.code === 200) {
                                         toast("成功", "success");
                                         setTimeout(function () {
@@ -38,7 +38,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form action="/admin/tag/list" class="form-inline">
+                <form action="/kaopu/admin/tag/list" class="form-inline">
                     <div class="form-group" style="margin-bottom: 10px;">
                         <input type="text" name="name" value="${name!}" class="form-control" placeholder="标签名">
                         <button type="submit" class="btn btn-primary btn-sm">搜索</button>
@@ -81,14 +81,14 @@
             </div>
         </div>
         <#include "../layout/paginate.ftl">
-        <@paginate currentPage=page.current totalPage=page.pages actionUrl="/admin/tag/list" urlParas="&name=${name!}"/>
+        <@paginate currentPage=page.current totalPage=page.pages actionUrl="/kaopu/admin/tag/list" urlParas="&name=${name!}"/>
     </section>
     <script>
         <#if sec.hasPermission('tag:delete')>
 
         function deleteBtn(id) {
             if (confirm('确定要删除这个标签吗？')) {
-                $.get("/admin/tag/delete?id=" + id, function (data) {
+                $.get("/kaopu/admin/tag/delete?id=" + id, function (data) {
                     if (data.code === 200) {
                         toast("成功", "success");
                         setTimeout(function () {

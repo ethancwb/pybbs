@@ -17,7 +17,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form id="form" action="/admin/tag/edit" method="post" enctype="multipart/form-data">
+                <form id="form" action="/kaopu/admin/tag/edit" method="post" enctype="multipart/form-data">
                     <input type="hidden" value="${tag.id}" name="id">
                     <div class="form-group">
                         <label>名称</label>
