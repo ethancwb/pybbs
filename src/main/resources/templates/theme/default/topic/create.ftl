@@ -71,7 +71,7 @@
                 var _this = this;
                 $(_this).button("loading");
                 $.ajax({
-                    url: '/api/topic',
+                    url: '/kaopu/api/topic',
                     cache: false,
                     async: false,
                     type: 'post',
@@ -88,12 +88,10 @@
                     }),
                     success: function (data) {
                         if (data.code === 200) {
-                            suc("创建成功");
                             setTimeout(function () {
                                 window.location.href = "/kaopu/topic/" + data.detail.id
                             }, 700);
                         } else {
-                            err(data.description);
                             $(_this).button("reset");
                         }
                     }

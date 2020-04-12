@@ -137,7 +137,7 @@
                 var _this = this;
                 $(_this).button("loading");
                 $.ajax({
-                    url: '/api/comment',
+                    url: '/kaopu/api/comment',
                     type: 'post',
                     cache: false,
                     async: false,
@@ -153,12 +153,10 @@
                     },
                     success: function (data) {
                         if (data.code === 200) {
-                            suc("评论成功");
                             setTimeout(function () {
                                 window.location.reload();
                             }, 700);
                         } else {
-                            err(data.description);
                             $(_this).button("reset");
                         }
                     }
@@ -176,7 +174,7 @@
                     type = 'delete';
                 }
                 $.ajax({
-                    url: '/api/collect/${topic.id}',
+                    url: '/kaopu/api/collect/${topic.id}',
                     type: type,
                     cache: false,
                     async: false,
@@ -188,16 +186,12 @@
                     success: function (data) {
                         if (data.code === 200) {
                             if (text === "加入收藏") {
-                                suc("收藏成功");
                                 $(_this).text("取消收藏");
                                 $("#collectCount").text(parseInt(collectCount) + 1);
                             } else if (text === "取消收藏") {
-                                suc("取消收藏成功");
                                 $(_this).text("加入收藏");
                                 $("#collectCount").text(parseInt(collectCount) - 1);
                             }
-                        } else {
-                            err(data.description);
                         }
                     }
                 })
@@ -206,7 +200,7 @@
             $("#deleteTopic").click(function () {
                 if (confirm("确定要删除吗？这会清空跟这个话题所有相关的数据，再考虑考虑呗！！")) {
                     $.ajax({
-                        url: '/api/topic/${topic.id}',
+                        url: '/kaopu/api/topic/${topic.id}',
                         type: 'delete',
                         cache: false,
                         async: false,
@@ -218,12 +212,9 @@
                         data: JSON.stringify({token: '${_user.token}'}),
                         success: function (data) {
                             if (data.code === 200) {
-                                suc("删除成功");
                                 setTimeout(function () {
                                     window.location.href = "/kaopu/";
                                 }, 700);
-                            } else {
-                                err(data.description);
                             }
                         }
                     })
@@ -234,7 +225,7 @@
         // 点赞话题
         function voteTopic(id) {
             $.ajax({
-                url: '/api/topic/' + id + '/vote',
+                url: '/kaopu/api/topic/' + id + '/vote',
                 type: 'get',
                 cache: false,
                 async: false,
@@ -247,17 +238,13 @@
                     if (data.code === 200) {
                         var voteTopicIcon = $("#vote_topic_icon_" + id);
                         if (voteTopicIcon.hasClass("fa-thumbs-up")) {
-                            suc("取消点赞成功");
                             voteTopicIcon.removeClass("fa-thumbs-up");
                             voteTopicIcon.addClass("fa-thumbs-o-up");
                         } else {
-                            suc("点赞成功");
                             voteTopicIcon.addClass("fa-thumbs-up");
                             voteTopicIcon.removeClass("fa-thumbs-o-up");
                         }
                         $("#vote_topic_count_" + id).text(data.detail);
-                    } else {
-                        err(data.description);
                     }
                 }
             })
@@ -267,7 +254,7 @@
         function deleteComment(id) {
             if (confirm("确定要删除这个评论吗？删了就没有了哦！")) {
                 $.ajax({
-                    url: '/api/comment/' + id,
+                    url: '/kaopu/api/comment/' + id,
                     cache: false,
                     async: false,
                     type: 'delete',
@@ -278,12 +265,9 @@
                     },
                     success: function (data) {
                         if (data.code === 200) {
-                            suc("删除成功");
                             setTimeout(function () {
                                 window.location.reload();
                             }, 700);
-                        } else {
-                            err(data.description);
                         }
                     }
                 })

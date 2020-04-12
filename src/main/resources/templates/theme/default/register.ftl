@@ -84,7 +84,7 @@
                     return;
                 }
                 $.ajax({
-                    url: '/api/register',
+                    url: '/kaopu/api/register',
                     type: 'post',
                     cache: false,
                     async: false,
@@ -97,12 +97,9 @@
                     }),
                     success: function (data) {
                         if (data.code === 200) {
-                            suc("注册成功");
                             setTimeout(function () {
-                                window.location.href = "/";
+                                window.location.href = "/kaopu/";
                             }, 700);
-                        } else {
-                            err(data.description);
                         }
                     }
                 })

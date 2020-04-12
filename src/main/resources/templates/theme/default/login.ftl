@@ -77,7 +77,7 @@
                     return;
                 }
                 $.ajax({
-                    url: '/api/login',
+                    url: '/kaopu/api/login',
                     type: 'post',
                     cache: false,
                     async: false,
@@ -89,12 +89,9 @@
                     }),
                     success: function (data) {
                         if (data.code === 200) {
-                            suc("登录成功");
                             setTimeout(function () {
                                 window.location.href = "/kaopu/";
                             }, 700);
-                        } else {
-                            err(data.description);
                         }
                     }
                 })

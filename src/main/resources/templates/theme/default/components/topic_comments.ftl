@@ -55,7 +55,7 @@
                         <script>
                             function vote(id) {
                                 $.ajax({
-                                    url: '/api/comment/' + id + '/vote',
+                                    url: '/kaopu/api/comment/' + id + '/vote',
                                     cache: false,
                                     async: false,
                                     type: 'get',
@@ -68,17 +68,13 @@
                                         if (data.code === 200) {
                                             var voteIcon = $("#vote_icon_" + id);
                                             if (voteIcon.hasClass("fa-thumbs-up")) {
-                                                suc("取消点赞成功");
                                                 voteIcon.removeClass("fa-thumbs-up");
                                                 voteIcon.addClass("fa-thumbs-o-up");
                                             } else {
-                                                suc("点赞成功");
                                                 voteIcon.addClass("fa-thumbs-up");
                                                 voteIcon.removeClass("fa-thumbs-o-up");
                                             }
                                             $("#vote_count_" + id).text(data.detail);
-                                        } else {
-                                            err(data.description);
                                         }
                                     }
                                 })

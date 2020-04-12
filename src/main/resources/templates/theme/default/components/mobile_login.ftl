@@ -60,7 +60,7 @@
         if (count < 60) return;
         $("#send_sms_code_btn").attr('disabled', true);
         $.ajax({
-            url: '/api/sms_code',
+            url: '/kaopu/api/sms_code',
             type: 'get',
             cache: false,
             async: false,
@@ -80,7 +80,6 @@
                             clearInterval(interval);
                         }
                     }, 1000);
-                    suc("发送成功");
                 } else {
                     $("#send_sms_code_btn").attr('disabled', false);
                     err(data.description);
@@ -107,7 +106,7 @@
             return;
         }
         $.ajax({
-            url: '/api/mobile_login',
+            url: '/kaopu/api/mobile_login',
             type: 'post',
             cache: false,
             async: false,
@@ -119,12 +118,9 @@
             }),
             success: function (data) {
                 if (data.code === 200) {
-                    suc("登录成功");
                     setTimeout(function () {
-                        window.location.href = "/";
+                        window.location.href = "/kaopu/";
                     }, 700);
-                } else {
-                    err(data.description);
                 }
             }
         });

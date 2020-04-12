@@ -124,7 +124,7 @@
         }
         $(".loading").show();
         $.ajax({
-          url: '/api/comment',
+          url: '/kaopu/api/comment',
           type: 'post',
           cache: false,
           async: false,
@@ -160,7 +160,7 @@
           type = 'delete';
         }
         $.ajax({
-          url: '/api/collect/${topic.id}',
+          url: '/kaopu/api/collect/${topic.id}',
           type: type,
           cache: false,
           async: false,
@@ -188,7 +188,7 @@
       $("#deleteTopic").click(function () {
         if (confirm("确定要删除吗？这会清空跟这个话题所有相关的数据，再考虑考虑呗！！")) {
           $.ajax({
-            url: '/api/topic/${topic.id}',
+            url: '/kaopu/api/topic/${topic.id}',
             type: 'delete',
             cache: false,
             async: false,
@@ -212,7 +212,7 @@
     // 点赞话题
     function voteTopic(id) {
       $.ajax({
-        url: '/api/topic/' + id + '/vote',
+        url: '/kaopu/api/topic/' + id + '/vote',
         type: 'get',
         cache: false,
         async: false,
@@ -243,7 +243,7 @@
     function deleteComment(id) {
       if (confirm("确定要删除这个评论吗？删了就没有了哦！")) {
         $.ajax({
-          url: '/api/comment/' + id,
+          url: '/kaopu/api/comment/' + id,
           cache: false,
           async: false,
           type: 'delete',
@@ -275,7 +275,7 @@
     // 点赞评论
     function voteComment(id) {
       $.ajax({
-        url: '/api/comment/' + id + '/vote',
+        url: '/kaopu/api/comment/' + id + '/vote',
         cache: false,
         async: false,
         type: 'get',

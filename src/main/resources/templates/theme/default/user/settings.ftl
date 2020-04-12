@@ -162,7 +162,7 @@
                 var bio = $("#bio").val();
                 var emailNotification = $("#emailNotification").is(":checked");
                 $.ajax({
-                    url: '/api/settings',
+                    url: '/kaopu/api/settings',
                     cache: false,
                     async: false,
                     type: 'put',
@@ -179,12 +179,9 @@
                     }),
                     success: function (data) {
                         if (data.code === 200) {
-                            suc("更新个人资料成功");
                             setTimeout(function () {
                                 window.location.reload();
                             }, 700);
-                        } else {
-                            err(data.description);
                         }
                     }
                 })
@@ -200,7 +197,7 @@
                 fd.append("type", "avatar");
                 fd.append("token", "${_user.token}");
                 $.post({
-                    url: "/api/upload",
+                    url: "/kaopu/api/upload",
                     data: fd,
                     dataType: 'json',
                     headers: {
@@ -211,15 +208,10 @@
                     success: function (data) {
                         if (data.code === 200) {
                             if (data.detail.errors.length === 0) {
-                                suc("修改头像成功");
                                 $.each($(".avatar "), function (i, v) {
                                     $(v).attr("src", data.detail.urls[0]);
                                 })
-                            } else {
-                                err(data.detail.errors[0]);
                             }
-                        } else {
-                            err(data.description);
                         }
                     }
                 })
@@ -228,7 +220,7 @@
             // 发送激活邮件
             $("#sendActiveEmail").on("click", function () {
                 $.ajax({
-                    url: '/api/settings/sendActiveEmail',
+                    url: '/kaopu/api/settings/sendActiveEmail',
                     cache: false,
                     async: false,
                     type: 'get',
@@ -238,11 +230,6 @@
                         'token': '${_user.token}'
                     },
                     success: function (data) {
-                        if (data.code === 200) {
-                            suc("发送成功");
-                        } else {
-                            err(data.description);
-                        }
                     }
                 })
             })
@@ -252,7 +239,7 @@
                 var loadingBtn = $(this).button("loading");
                 var email = $("#email").val();
                 $.ajax({
-                    url: '/api/settings/sendEmailCode',
+                    url: '/kaopu/api/settings/sendEmailCode',
                     cache: false,
                     async: false,
                     type: 'get',
@@ -265,11 +252,6 @@
                         email: email,
                     },
                     success: function (data) {
-                        if (data.code === 200) {
-                            suc("发送成功");
-                        } else {
-                            err(data.description);
-                        }
                         loadingBtn.button("reset");
                     }
                 })
@@ -278,7 +260,7 @@
                 var email = $("#email").val();
                 var code = $("#code").val();
                 $.ajax({
-                    url: '/api/settings/updateEmail',
+                    url: '/kaopu/api/settings/updateEmail',
                     cache: false,
                     async: false,
                     type: 'put',
@@ -293,12 +275,9 @@
                     }),
                     success: function (data) {
                         if (data.code === 200) {
-                            suc("更改成功");
                             setTimeout(function () {
                                 window.location.reload();
                             }, 700);
-                        } else {
-                            err(data.description);
                         }
                     }
                 })
@@ -317,7 +296,7 @@
                     return;
                 }
                 $.ajax({
-                    url: '/api/settings/updatePassword',
+                    url: '/kaopu/api/settings/updatePassword',
                     cache: false,
                     async: false,
                     type: 'put',
@@ -331,11 +310,6 @@
                         newPassword: newPassword,
                     }),
                     success: function (data) {
-                        if (data.code === 200) {
-                            suc("修改密码成功");
-                        } else {
-                            err(data.description);
-                        }
                     }
                 })
             });

@@ -19,7 +19,7 @@
     var token = '${_user.token}';
     $("#refreshToken").on("click", function () {
         $.ajax({
-            url: '/api/settings/refreshToken',
+            url: '/kaopu/api/settings/refreshToken',
             cache: false,
             async: false,
             type: 'get',
@@ -30,7 +30,6 @@
             },
             success: function (data) {
                 if (data.code === 200) {
-                    suc("刷新token成功");
                     $("#qrcode").html("");
                     $("#qrcode").qrcode({
                         width: 180,
@@ -39,8 +38,6 @@
                     });
                     $("#userToken").text(data.detail);
                     token = data.detail;
-                } else {
-                    err("刷新token失败");
                 }
             }
         })

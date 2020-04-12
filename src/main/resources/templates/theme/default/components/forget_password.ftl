@@ -49,7 +49,7 @@
             return;
         }
         $.ajax({
-            url: '/api/forget_password',
+            url: '/kaopu/api/forget_password',
             type: 'post',
             cache: false,
             async: false,
@@ -60,12 +60,9 @@
             }),
             success: function (data) {
                 if (data.code === 200) {
-                    suc("邮件发送成功");
                     setTimeout(function () {
-                        window.location.href = "/";
+                        window.location.href = "/kaopu/";
                     }, 700);
-                } else {
-                    err(data.description);
                 }
             }
         });

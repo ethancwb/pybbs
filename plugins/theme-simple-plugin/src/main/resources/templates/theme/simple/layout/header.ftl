@@ -30,7 +30,7 @@
   <#if _user??>
     <script>
       $.ajax({
-        url: '/api/notification/notRead',
+        url: '/kaopu/api/notification/notRead',
         cache: false,
         async: false,
         type: 'get',

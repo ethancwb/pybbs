@@ -21,7 +21,7 @@
         return ;
       }
       $.ajax({
-        url: '/api/comment/${comment.id}',
+        url: '/kaopu/api/comment/${comment.id}',
         type: 'put',
         cache: false,
         async: false,

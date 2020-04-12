@@ -47,7 +47,7 @@
       }
       $(".loading").show();
       $.ajax({
-        url: '/api/register',
+        url: '/kaopu/api/register',
         type: 'post',
         cache: false,
         async: false,

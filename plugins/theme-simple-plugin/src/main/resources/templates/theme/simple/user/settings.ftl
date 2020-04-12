@@ -115,7 +115,7 @@
         var bio = $("#bio").val();
         var emailNotification = $("#emailNotification").is(":checked");
         $.ajax({
-          url: '/api/settings',
+          url: '/kaopu/api/settings',
           cache: false,
           async: false,
           type: 'put',
@@ -150,7 +150,7 @@
         fd.append("type", "avatar");
         fd.append("token", "${_user.token}");
         $.post({
-          url: "/api/upload",
+          url: "/kaopu/api/upload",
           data: fd,
           dataType: 'json',
           headers: {
@@ -173,7 +173,7 @@
       // 发送激活邮件
       $("#sendActiveEmail").on("click", function () {
         $.ajax({
-          url: '/api/settings/sendActiveEmail',
+          url: '/kaopu/api/settings/sendActiveEmail',
           cache: false,
           async: false,
           type: 'get',
@@ -201,7 +201,7 @@
         }
         $(this).attr("disabled", true);
         $.ajax({
-          url: '/api/settings/sendEmailCode',
+          url: '/kaopu/api/settings/sendEmailCode',
           cache: false,
           async: false,
           type: 'get',
@@ -225,7 +225,7 @@
         var email = $("#email").val();
         var code = $("#code").val();
         $.ajax({
-          url: '/api/settings/updateEmail',
+          url: '/kaopu/api/settings/updateEmail',
           cache: false,
           async: false,
           type: 'put',
@@ -261,7 +261,7 @@
           return;
         }
         $.ajax({
-          url: '/api/settings/updatePassword',
+          url: '/kaopu/api/settings/updatePassword',
           cache: false,
           async: false,
           type: 'put',
@@ -292,7 +292,7 @@
       var token = '${_user.token}';
       $("#refreshToken").on("click", function () {
         $.ajax({
-          url: '/api/settings/refreshToken',
+          url: '/kaopu/api/settings/refreshToken',
           cache: false,
           async: false,
           type: 'get',

@@ -37,7 +37,7 @@
 
         function markRead() {
             $.ajax({
-                url: '/api/notification/markRead',
+                url: '/kaopu/api/notification/markRead',
                 cache: false,
                 async: false,
                 type: 'get',

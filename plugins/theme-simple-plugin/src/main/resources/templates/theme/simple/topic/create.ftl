@@ -43,7 +43,7 @@
             // }
             $(".loading").show();
             $.ajax({
-                url: '/api/topic',
+                url: '/kaopu/api/topic',
                 type: 'post',
                 cache: false,
                 async: false,

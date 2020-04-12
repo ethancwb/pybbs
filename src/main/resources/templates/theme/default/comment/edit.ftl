@@ -52,7 +52,7 @@
                     return;
                 }
                 $.ajax({
-                    url: '/api/comment/${comment.id}',
+                    url: '/kaopu/api/comment/${comment.id}',
                     cache: false,
                     async: false,
                     type: 'put',
@@ -66,12 +66,9 @@
                     }),
                     success: function (data) {
                         if (data.code === 200) {
-                            suc("更新成功");
                             setTimeout(function () {
-                                window.location.href = "/topic/${comment.topicId}";
+                                window.location.href = "/kaopu/topic/${comment.topicId}";
                             }, 700);
-                        } else {
-                            err(data.description);
                         }
                     }
                 })

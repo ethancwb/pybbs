@@ -41,7 +41,7 @@
       //   return;
       // }
       $.ajax({
-        url: '/api/topic/${topic.id}',
+        url: '/kaopu/api/topic/${topic.id}',
         type: 'put',
         cache: false,
         async: false,

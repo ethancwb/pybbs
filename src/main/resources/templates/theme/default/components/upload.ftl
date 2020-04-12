@@ -61,7 +61,7 @@
         fd.append("type", type);
         fd.append("token", "${_user.token}");
         $.post({
-            url: "/api/upload",
+            url: "/kaopu/api/upload",
             data: fd,
             dataType: 'json',
             headers: {
@@ -80,14 +80,11 @@
             success: function (data) {
                 // layer.close(_m);
                 if (data.code === 200) {
-                    if (data.detail.errors.length === 0) {
-                        suc("上传成功");
-                    } else {
+                    if (data.detail.errors.length !== 0) {
                         var error = "";
                         for (var k = 0; k < data.detail.errors.length; k++) {
                             error += data.detail.errors[k] + "<br/>";
                         }
-                        err(error);
                     }
                     var oldContent = window.editor.getDoc().getValue();
                     // if (oldContent) oldContent += '\n\n';
@@ -105,8 +102,6 @@
                     //定位到文档的最后一个字符的位置
                     window.editor.setCursor(window.editor.lineCount(), 0);
                     $("#uploadImageForm")[0].reset();
-                } else {
-                    err(data.description);
                 }
             }
         })

@@ -16,7 +16,7 @@
         fd.append("type", type);
         fd.append("token", "${_user.token}");
         $.post({
-            url: "/api/upload",
+            url: "/kaopu/api/upload",
             data: fd,
             dataType: 'json',
             headers: {
