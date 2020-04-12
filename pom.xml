@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>co.yiiu</groupId>
-    <artifactId>pybbs</artifactId>
-    <version>5.2.1</version>
+    <groupId>kaopu</groupId>
+    <artifactId>kaopu</artifactId>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>pybbs</name>
-    <description>更实用的Java语言开发的论坛</description>
+    <name>kaopu</name>
+    <description>Kaopu论坛</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -201,7 +201,7 @@
 
     <build>
 
-        <finalName>pybbs</finalName>
+        <finalName>kaopu</finalName>
 
         <resources>
             <resource>
@@ -220,9 +220,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <layout>ZIP</layout>
-                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <!-- 打包发布时，跳过单元测试 -->
             <plugin>
