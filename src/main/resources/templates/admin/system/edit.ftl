@@ -16,8 +16,8 @@
             <small class="text-danger">是数字的千万不要填成字母，请务必按照格式填写</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="/admin/system/edit">系统</a></li>
+            <li><a href="/kaopu/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="/kaopu/admin/system/edit">系统</a></li>
             <li class="active">设置</li>
         </ol>
     </section>

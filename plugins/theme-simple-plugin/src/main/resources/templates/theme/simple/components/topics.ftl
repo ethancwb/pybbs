@@ -4,7 +4,7 @@
       <tr><td style="padding-top: 10px;"></td></tr>
       <tr>
         <td rowspan="2" width="50"><img src="${topic.avatar!}" width="48" style="vertical-align: middle;" alt=""></td>
-        <td><a class="title" href="/topic/${topic.id}">${topic.title}</a></td>
+        <td><a class="title" href="/kaopu/topic/${topic.id}">${topic.title}</a></td>
       </tr>
       <tr>
         <td style="font-size: 14px;">
@@ -14,9 +14,9 @@
             <span class="tag">精华</span>
           </#if>
           <span>${topic.view} 次点击</span>&nbsp;
-          <a href="/user/${topic.username}">${topic.username}</a>&nbsp;
+          <a href="/kaopu/user/${topic.username}">${topic.username}</a>&nbsp;
           <span>发布于 ${model.formatDate(topic.inTime)}</span>&nbsp;|
-          <a href="/topic/${topic.id}">${topic.commentCount} 评论</a>&nbsp;
+          <a href="/kaopu/topic/${topic.id}">${topic.commentCount} 评论</a>&nbsp;
         </td>
       </tr>
       <tr>

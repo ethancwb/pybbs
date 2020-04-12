@@ -8,7 +8,7 @@
   <title>Ooooops, 出错了~~</title>
   <link rel="icon" href="https://yiiu.co/favicon.ico">
   <#--css-->
-  <link rel="stylesheet" href="/static/theme/simple/css/app.css"/>
+  <link rel="stylesheet" href="/kaopu/static/theme/simple/css/app.css"/>
 </head>
 <body>
 <div class="container">

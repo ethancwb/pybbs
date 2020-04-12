@@ -10,9 +10,9 @@
                         <#if notification.action == "COMMENT">
                             评论了你的话题 <a href="/kaopu/topic/${notification.topicId}">${notification.title}</a>
                         <#elseif notification.action == "REPLY">
-                            在话题 <a href="/topic/${notification.topicId}">${notification.title}</a> 下回复了你
+                            在话题 <a href="/kaopu/topic/${notification.topicId}">${notification.title}</a> 下回复了你
                         <#elseif notification.action == "COLLECT">
-                            收藏了你的话题 <a href="/topic/${notification.topicId}">${notification.title}</a>
+                            收藏了你的话题 <a href="/kaopu/topic/${notification.topicId}">${notification.title}</a>
                         </#if>
                     </div>
                     <#if notification.content??>
