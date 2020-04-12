@@ -1,4 +1,4 @@
-package co.yiiu.pybbs;
+package java.co.yiiu.pybbs;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
