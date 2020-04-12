@@ -90,7 +90,7 @@
                         if (data.code === 200) {
                             suc("创建成功");
                             setTimeout(function () {
-                                window.location.href = "/topic/" + data.detail.id
+                                window.location.href = "/kaopu/topic/" + data.detail.id
                             }, 700);
                         } else {
                             err(data.description);

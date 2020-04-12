@@ -220,7 +220,7 @@
                             if (data.code === 200) {
                                 suc("删除成功");
                                 setTimeout(function () {
-                                    window.location.href = "/";
+                                    window.location.href = "/kaopu/";
                                 }, 700);
                             } else {
                                 err(data.description);

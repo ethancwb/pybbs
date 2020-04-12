@@ -20,7 +20,7 @@
                         </a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0 ml-2 d-none d-md-block" action="/search">
+                <form class="form-inline my-2 my-lg-0 ml-2 d-none d-md-block" action="/kaopu/search">
                     <div class="input-group">
                         <input class="form-control" type="search" name="keyword" placeholder="回车搜索" value="${keyword!}"
                                required aria-label="Search">
@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="javascript:if(confirm('确定要登出吗？登出了就没办法发帖回帖了哦!'))window.location.href='/logout'"
+                        <a href="javascript:if(confirm('确定要登出吗？登出了就没办法发帖回帖了哦!'))window.location.href='/kaopu/logout'"
                            class="nav-link">
                             <i class="fa fa-sign-out"></i> ${i18n.getMessage("logout")}
                         </a>

@@ -53,11 +53,11 @@
     </div>
     <script>
         $(function () {
-            $(".captcha").attr('src', "/common/captcha?ver=" + new Date().getTime());
+            $(".captcha").attr('src', "/kaopu/common/captcha?ver=" + new Date().getTime());
             $(".captcha").click(function () {
                 $(".captcha").each(function () {
                     var date = new Date();
-                    $(this).attr("src", "/common/captcha?ver=" + date.getTime());
+                    $(this).attr("src", "/kaopu/common/captcha?ver=" + date.getTime());
                 });
             });
             $("#login_btn").click(function () {
@@ -91,7 +91,7 @@
                         if (data.code === 200) {
                             suc("登录成功");
                             setTimeout(function () {
-                                window.location.href = "/";
+                                window.location.href = "/kaopu/";
                             }, 700);
                         } else {
                             err(data.description);

@@ -19,7 +19,7 @@
         <li <#if page_tab == "notifications">class="active"</#if>><a href="/kaopu/notifications">通知 <span id="notReadCount">0</span></a></li>
         <li <#if page_tab == "user">class="active"</#if>><a href="/kaopu/user/${_user.username}">${_user.username}</a></li>
         <li <#if page_tab == "settings">class="active"</#if>><a href="/kaopu/settings">设置</a></li>
-        <li><a href="javascript:if(confirm('确定要登出吗？'))location.href='/logout'">登出</a></li>
+        <li><a href="javascript:if(confirm('确定要登出吗？'))location.href='/kaopu/logout'">登出</a></li>
       <#else>
         <li <#if page_tab == "login">class="active"</#if>><a href="/kaopu/login">登录</a></li>
         <li <#if page_tab == "register">class="active"</#if>><a href="/kaopu/register">注册</a></li>
