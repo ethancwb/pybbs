@@ -8,7 +8,7 @@
                     <table class="table">
                         <#list page.records as map>
                             <tr>
-                                <td><a href="/topic/${map.id!}" target="_blank"
+                                <td><a href="kaopu/topic/${map.id!}" target="_blank"
                                        style="font-size: 16px;">${map.title!}</a></td>
                             </tr>
                         </#list>

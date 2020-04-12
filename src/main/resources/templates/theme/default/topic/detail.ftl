@@ -29,14 +29,14 @@
                                     <span class="badge badge-info">精华</span>
                                     <span>•</span>
                                 </#if>
-                                <span><a href="/user/${topicUser.username!}">${topicUser.username!}</a></span>
+                                <span><a href="kaopu/user/${topicUser.username!}">${topicUser.username!}</a></span>
                                 <span>•</span>
                                 <span>${model.formatDate(topic.inTime)}</span>
                                 <span>•</span>
                                 <span>${topic.view!1}次点击</span>
                                 <#if _user?? && topic.userId == _user.id>
                                     <span>•</span>
-                                    <span><a href="/topic/edit/${topic.id}">编辑</a></span>
+                                    <span><a href="kaopu/topic/edit/${topic.id}">编辑</a></span>
                                     <span>•</span>
                                     <span><a href="javascript:;" id="deleteTopic">删除</a></span>
                                 </#if>
@@ -52,7 +52,7 @@
                     ${model.formatContent(topic.content)}
                     <div>
                         <#list tags as tag>
-                            <a href="/topic/tag/${tag.name}"><span class="badge badge-info">${tag.name}</span></a>
+                            <a href="kaopu/topic/tag/${tag.name}"><span class="badge badge-info">${tag.name}</span></a>
                         </#list>
                     </div>
                 </div>

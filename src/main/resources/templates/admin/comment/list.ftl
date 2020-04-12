@@ -6,8 +6,8 @@
             <small>列表</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="/admin/comment/list">评论</a></li>
+            <li><a href="kaopu/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="kaopu/admin/comment/list">评论</a></li>
             <li class="active">列表</li>
         </ol>
     </section>
@@ -42,12 +42,12 @@
                     <#list page.records as comment>
                         <tr>
                             <td>${comment.id}</td>
-                            <td><a href="/topic/${comment.topicId}" target="_blank">${comment.title!}</a></td>
+                            <td><a href="kaopu/topic/${comment.topicId}" target="_blank">${comment.title!}</a></td>
                             <td>${comment.username!}</td>
                             <td>${comment.inTime!}</td>
                             <td>
                                 <#if sec.hasPermission("comment:edit")>
-                                    <a href="/admin/comment/edit?id=${comment.id}" class="btn btn-xs btn-warning">编辑</a>
+                                    <a href="kaopu/admin/comment/edit?id=${comment.id}" class="btn btn-xs btn-warning">编辑</a>
                                 </#if>
                                 <#if sec.hasPermission("comment:delete")>
                                     <button onclick="deleteBtn('${comment.id}')" class="btn btn-xs btn-danger">删除

@@ -28,7 +28,7 @@
             <hr>
         </#if>
         <#if !model.isEmpty(site.oauth_github_client_id!)>
-            <a href="/oauth/github" class="btn btn-success btn-block"><i class="fa fa-github"></i>&nbsp;&nbsp;通过Github登录/注册</a>
+            <a href="kaopu/oauth/github" class="btn btn-success btn-block"><i class="fa fa-github"></i>&nbsp;&nbsp;通过Github登录/注册</a>
         </#if>
         <#if !model.isEmpty(site.sms_access_key_id!)>
             <button class="btn btn-primary btn-block" id="mobile_login_btn"><i class="fa fa-mobile"></i>&nbsp;&nbsp;通过手机号登录/注册

@@ -6,8 +6,8 @@
             <small>列表</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="/admin/topic/list">话题</a></li>
+            <li><a href="kaopu/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="kaopu/admin/topic/list">话题</a></li>
             <li class="active">列表</li>
         </ol>
     </section>
@@ -52,8 +52,8 @@
                     <#list page.records as topic>
                         <tr>
                             <td>${topic.id}</td>
-                            <td><a href="/topic/${topic.id}" target="_blank">${topic.title}</a></td>
-                            <td><a href="/user/${topic.username}" target="_blank">${topic.username}</a></td>
+                            <td><a href="kaopu/topic/${topic.id}" target="_blank">${topic.title}</a></td>
+                            <td><a href="kaopu/user/${topic.username}" target="_blank">${topic.username}</a></td>
                             <td>${topic.commentCount}</td>
                             <td>
                                 <#if topic.top>
@@ -95,7 +95,7 @@
                                     </button>
                                 </#if>
                                 <#if sec.hasPermission("topic:edit")>
-                                    <a href="/admin/topic/edit?id=${topic.id}" class="btn btn-xs btn-warning">编辑</a>
+                                    <a href="kaopu/admin/topic/edit?id=${topic.id}" class="btn btn-xs btn-warning">编辑</a>
                                 </#if>
                                 <#if sec.hasPermission("topic:delete")>
                                     <button onclick="actionBtn('${topic.id}', 'delete', this)"

@@ -12,33 +12,33 @@
             <div class="card" style="min-height: 85vh">
                 <div class="card-header">
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a class="nav-link <#if tab=="good">active</#if>" href="/?tab=good">精华</a>
+                        <li class="nav-item"><a class="nav-link <#if tab=="good">active</#if>" href="kaopu/?tab=good">精华</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link <#if tab=="hot">active</#if>" href="/?tab=hot">最热</a>
+                        <li class="nav-item"><a class="nav-link <#if tab=="hot">active</#if>" href="kaopu/?tab=hot">最热</a>
                         </li>
                             <li class="nav-item"><a class="nav-link <#if tab=="newest">active</#if>"
-                                                    href="/?tab=newest">最新</a>
+                                                    href="kaopu/?tab=newest">最新</a>
                             </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="求职">active</#if>"
-                                                href="/?tab=求职">求职</a>
+                                                href="kaopu/?tab=求职">求职</a>
                         </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="同城">active</#if>"
-                            href="/?tab=同城">同城</a>
+                            href="kaopu/?tab=同城">同城</a>
                         </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="学校">active</#if>"
-                                                href="/?tab=学校">学校</a>
+                                                href="kaopu/?tab=学校">学校</a>
                         </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="学术">active</#if>"
-                            href="/?tab=学术">学术</a>
+                            href="kaopu/?tab=学术">学术</a>
                         </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="爱好">active</#if>"
-                            href="/?tab=爱好">爱好</a>
+                            href="kaopu/?tab=爱好">爱好</a>
                         </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="管理">active</#if>"
-                                                href="/?tab=管理">管理</a>
+                                                href="kaopu/?tab=管理">管理</a>
                         </li>
                         <li class="nav-item"><a class="nav-link <#if tab=="其他">active</#if>"
-                            href="/?tab=其他">其他</a>
+                            href="kaopu/?tab=其他">其他</a>
                         </li>
                     </ul>
                 </div>

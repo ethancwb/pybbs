@@ -26,7 +26,7 @@
           <span class="label label-info">精华</span>
           <span>•</span>
         </#if>
-        <span><a href="/user/${topicUser.username!}">${topicUser.username!}</a></span>
+        <span><a href="kaopu/user/${topicUser.username!}">${topicUser.username!}</a></span>
         <span>•</span>
         <span>${model.formatDate(topic.inTime)}</span>
         <span>•</span>
@@ -35,7 +35,7 @@
         <span>${topic.commentCount!0}条评论</span>
         <#if _user?? && topic.userId == _user.id>
           <span>•</span>
-          <span><a href="/topic/edit/${topic.id}">编辑</a></span>
+          <span><a href="kaopu/topic/edit/${topic.id}">编辑</a></span>
           <span>•</span>
           <span><a href="javascript:;" id="deleteTopic">删除</a></span>
         </#if>
@@ -47,7 +47,7 @@
     ${model.formatContent(topic.content)}
     <div>
       <#list tags as tag>
-        <a href="/topic/tag/${tag.name}" class="tag">${tag.name}</a>
+        <a href="kaopu/topic/tag/${tag.name}" class="tag">${tag.name}</a>
       </#list>
       <div style="margin-top: 15px; font-size: 14px;">
         <#if _user??>
@@ -77,7 +77,7 @@
       <button id="comment_btn">评论</button>
     </div>
   <#else>
-    <a href="/login">登录</a> 添加评论
+    <a href="kaopu/login">登录</a> 添加评论
   </#if>
   <hr>
 <#--评论列表-->
@@ -87,7 +87,7 @@
         <div class="top">
           <img width="24" style="vertical-align: middle;" src="${comment.avatar!}" alt="">
           <span style="font-size: 14px;">
-            <a href="/user/${comment.username}">${comment.username}</a>
+            <a href="kaopu/user/${comment.username}">${comment.username}</a>
             ${model.formatDate(comment.inTime)}
             <span class="pull-right">
               <#if _user??>
@@ -100,7 +100,7 @@
               <span id="vote_count_${comment.id}">${model.getUpIds(comment.upIds)?size}</span>&nbsp;
               <#if _user??>
                 <#if _user.id == comment.userId>
-                  <a href="/comment/edit/${comment.id}"><span class="fa fa-pencil-square-o"></span></a>
+                  <a href="kaopu/comment/edit/${comment.id}"><span class="fa fa-pencil-square-o"></span></a>
                   <a href="javascript:;" onclick="deleteComment(${comment.id})"><span
                         class="fa fa-trash-o"></span></a>
                 </#if>

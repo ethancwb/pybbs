@@ -35,7 +35,7 @@
             <hr>
         </#if>
         <#if !model.isEmpty(site.oauth_github_client_id!)>
-            <a href="/oauth/github" class="btn btn-success btn-block"><i class="fa fa-github"></i>&nbsp;&nbsp;通过Github登录/注册</a>
+            <a href="kaopu/oauth/github" class="btn btn-success btn-block"><i class="fa fa-github"></i>&nbsp;&nbsp;通过Github登录/注册</a>
         </#if>
         <a class="btn btn-primary btn-block" id="local_login_btn" onclick="local_login_btn()"><i
                     class="fa fa-sign-in"></i>&nbsp;&nbsp;帐号登录/注册</a>

@@ -11,7 +11,7 @@
                                     <#if tag.icon??>
                                         <img src="${tag.icon}" width="24" class="sponsor-tag-img" alt="${tag.name}">
                                     </#if>
-                                    <a href="/topic/tag/${tag.name}">
+                                    <a href="kaopu/topic/tag/${tag.name}">
                                         <span class="badge badge-info">${tag.name}</span>
                                     </a>
                                     <span class="text-muted">x ${tag.topicCount}</span>

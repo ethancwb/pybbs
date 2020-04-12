@@ -5,12 +5,12 @@
     <table border="0" style="width: 100%; margin-top: 10px;">
       <#list page.records as map>
         <tr>
-          <td><a href="/topic/${map.id!}" target="_blank" style="font-size: 16px;">${map.title!}</a></td>
+          <td><a href="kaopu/topic/${map.id!}" target="_blank" style="font-size: 16px;">${map.title!}</a></td>
         </tr>
       </#list>
     </table>
     <#if page.current < page.pages>
-      <a href="/search?keyword=${keyword!}&pageNo=${page.current + 1}">查看更多</a>
+      <a href="kaopu/search?keyword=${keyword!}&pageNo=${page.current + 1}">查看更多</a>
     </#if>
   </@tag_search>
 </@html>

@@ -6,8 +6,8 @@
             <small>列表</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="/admin/tag/list">标签</a></li>
+            <li><a href="kaopu/admin/index"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="kaopu/admin/tag/list">标签</a></li>
             <li class="active">列表</li>
         </ol>
     </section>
@@ -59,11 +59,11 @@
                         <tr>
                             <td>${tag.id}</td>
                             <td><img src="${tag.icon!}" width="30" alt=""></td>
-                            <td><a href="/topic/tag/${tag.name!}" target="_blank">${tag.name!}</a></td>
+                            <td><a href="kaopu/topic/tag/${tag.name!}" target="_blank">${tag.name!}</a></td>
                             <td>${tag.topicCount!0}</td>
                             <td>
                                 <#if sec.hasPermission('tag:edit')>
-                                    <a href="/admin/tag/edit?id=${tag.id}" class="btn btn-xs btn-warning">编辑</a>
+                                    <a href="kaopu/admin/tag/edit?id=${tag.id}" class="btn btn-xs btn-warning">编辑</a>
                                 </#if>
                                 <#if sec.hasPermission('tag:delete')>
                                     <button onclick="deleteBtn('${tag.id}')" class="btn btn-xs btn-danger">删除</button>

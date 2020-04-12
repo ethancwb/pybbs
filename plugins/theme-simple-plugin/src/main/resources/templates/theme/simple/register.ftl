@@ -20,7 +20,7 @@
       </table>
     </div>
     <div class="box-footer">
-      <a href="/login">登录</a>
+      <a href="kaopu/login">登录</a>
       <button class="pull-right" onclick="register()">注册</button>
     </div>
   </div>

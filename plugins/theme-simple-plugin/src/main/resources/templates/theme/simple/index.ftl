@@ -8,7 +8,7 @@
         <@topics page=page/>
 
         <#if page.current < page.pages>
-          <a href="/?tab=${tab}&pageNo=${page.current + 1}">查看更多</a>
+          <a href="kaopu/?tab=${tab}&pageNo=${page.current + 1}">查看更多</a>
         </#if>
     </@tag_topics>
 </@html>

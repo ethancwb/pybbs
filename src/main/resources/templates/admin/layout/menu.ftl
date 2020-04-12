@@ -16,7 +16,7 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <#if sec.hasPermission('index:index')>
                     <li <#if page_tab=='index'>class="active"</#if>>
-                        <a href="/admin/index">
+                        <a href="kaopu/admin/index">
                             <i class="fa fa-dashboard"></i>
                             <span>${i18n.getMessage("admin.dashboard")}</span>
                         </a>
@@ -24,7 +24,7 @@
                 </#if>
                 <#if sec.hasPermission('topic:list')>
                     <li <#if page_tab=='topic'>class="active"</#if>>
-                        <a href="/admin/topic/list">
+                        <a href="kaopu/admin/topic/list">
                             <i class="fa fa-list"></i>
                             <span>${i18n.getMessage("admin.topics")}</span>
                         </a>
@@ -32,7 +32,7 @@
                 </#if>
                 <#if sec.hasPermission('comment:list')>
                     <li <#if page_tab=='comment'>class="active"</#if>>
-                        <a href="/admin/comment/list">
+                        <a href="kaopu/admin/comment/list">
                             <i class="fa fa-comment"></i>
                             <span>${i18n.getMessage("admin.comments")}</span>
                         </a>
@@ -40,7 +40,7 @@
                 </#if>
                 <#if sec.hasPermission('tag:list')>
                     <li <#if page_tab=='tag'>class="active"</#if>>
-                        <a href="/admin/tag/list">
+                        <a href="kaopu/admin/tag/list">
                             <i class="fa fa-tags"></i>
                             <span>${i18n.getMessage("admin.tags")}</span>
                         </a>
@@ -48,7 +48,7 @@
                 </#if>
                 <#if sec.hasPermission('sensitive_word:list')>
                     <li <#if page_tab=='sensitive_word'>class="active"</#if>>
-                        <a href="/admin/sensitive_word/list">
+                        <a href="kaopu/admin/sensitive_word/list">
                             <i class="fa fa-filter"></i>
                             <span>${i18n.getMessage("admin.sensitive_word")}</span>
                         </a>
@@ -56,7 +56,7 @@
                 </#if>
                 <#if sec.hasPermission('user:list')>
                     <li <#if page_tab=='user'>class="active"</#if>>
-                        <a href="/admin/user/list">
+                        <a href="kaopu/admin/user/list">
                             <i class="fa fa-user"></i>
                             <span>${i18n.getMessage("admin.users")}</span>
                         </a>
@@ -73,7 +73,7 @@
                         <ul class="treeview-menu">
                             <#if sec.hasPermission('admin_user:list')>
                                 <li <#if page_tab=='auth_admin_user'>class="active"</#if>>
-                                    <a href="/admin/admin_user/list">
+                                    <a href="kaopu/admin/admin_user/list">
                                         <i class="fa fa-circle-o"></i>
                                         ${i18n.getMessage("admin.admin_users")}
                                     </a>
@@ -81,7 +81,7 @@
                             </#if>
                             <#if sec.hasPermission('role:list')>
                                 <li <#if page_tab=='auth_role'>class="active"</#if>>
-                                    <a href="/admin/role/list">
+                                    <a href="kaopu/admin/role/list">
                                         <i class="fa fa-circle-o"></i>
                                         ${i18n.getMessage("admin.roles")}
                                     </a>
@@ -89,7 +89,7 @@
                             </#if>
                             <#if sec.hasPermission('permission:list')>
                                 <li <#if page_tab=='auth_permission'>class="active"</#if>>
-                                    <a href="/admin/permission/list">
+                                    <a href="kaopu/admin/permission/list">
                                         <i class="fa fa-circle-o"></i>
                                         ${i18n.getMessage("admin.permissions")}
                                     </a>
@@ -100,14 +100,14 @@
                 </#if>
                 <#if sec.hasPermission('system:edit')>
                     <li <#if page_tab=='system'>class="active"</#if>>
-                        <a href="/admin/system/edit">
+                        <a href="kaopu/admin/system/edit">
                             <i class="fa fa-cogs"></i>
                             <span>${i18n.getMessage("admin.system_config")}</span>
                         </a>
                     </li>
                 </#if>
                 <li>
-                    <a href="/admin/logout">
+                    <a href="kaopu/admin/logout">
                         <i class="fa fa-sign-out"></i>
                         <span>${i18n.getMessage("logout")}</span>
                     </a>

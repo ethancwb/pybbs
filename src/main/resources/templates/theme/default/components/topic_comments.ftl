@@ -12,10 +12,10 @@
                             <div class="media-body">
                                 <div class="gray d-flex justify-content-between">
                                     <div>
-                                        <a href="/user/${comment.username}">
+                                        <a href="kaopu/user/${comment.username}">
                                             <img src="${comment.avatar!}" class="avatar avatar-sm" alt=""/>
                                         </a>
-                                        <a href="/user/${comment.username!}">${comment.username!} </a>
+                                        <a href="kaopu/user/${comment.username!}">${comment.username!} </a>
                                         <#if topicUser?? && topicUser.id == comment.userId>
                                             <span class="text-success">[楼主]</span>
                                         </#if>
@@ -33,7 +33,7 @@
                                         <span id="vote_count_${comment.id}">${model.getUpIds(comment.upIds)?size}</span>&nbsp;
                                         <#if _user??>
                                             <#if _user.id == comment.userId>
-                                                <a href="/comment/edit/${comment.id}"><span
+                                                <a href="kaopu/comment/edit/${comment.id}"><span
                                                             class="fa fa-pencil-square-o"></span></a>
                                                 <a href="javascript:;" onclick="deleteComment(${comment.id})">
                                                     <span class="fa fa-trash-o"></span>

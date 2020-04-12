@@ -4,7 +4,7 @@
         <div class="col-md-9">
             <div class="card">
                 <div class="card-header">
-                    <a href="/">主页</a> / <a href="/topic/${topic.id}">${topic.title}</a> / 编辑评论
+                    <a href="kaopu/">主页</a> / <a href="kaopu/topic/${topic.id}">${topic.title}</a> / 编辑评论
                     <span class="pull-right">
             <a href="javascript:uploadFile('topic');">上传图片</a>&nbsp;|
             <a href="javascript:uploadFile('video');">上传视频</a>

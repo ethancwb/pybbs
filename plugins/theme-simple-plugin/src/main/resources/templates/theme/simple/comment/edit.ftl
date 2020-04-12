@@ -2,7 +2,7 @@
 <@html page_title="编辑话题" page_tab="">
   <div>
     <div>
-      <a href="/">主页</a> / <a href="/topic/${topic.id}">${topic.title}</a> / 编辑评论
+      <a href="kaopu/">主页</a> / <a href="kaopu/topic/${topic.id}">${topic.title}</a> / 编辑评论
       <a href="javascript:uploadImageBtn();" class="pull-right">上传图片</a>
     </div>
     <div style="margin-top: 10px;">
