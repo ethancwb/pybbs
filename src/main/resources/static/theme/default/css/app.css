@@ -19,7 +19,7 @@ a, a:hover {
     vertical-align: text-top;
     padding-top: 20px;
     margin-right: 5px;
-    background: url("/static/theme/default/images/login-icon.svg") no-repeat;
+    background: url("/kaopu/static/theme/default/images/login-icon.svg") no-repeat;
 }
 
 .CodeMirror {

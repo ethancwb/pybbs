@@ -59,8 +59,7 @@ public class FileUtil {
             stream.close();
 
             // 上传成功后返回访问路径
-            return systemConfigService.selectAllConfig().get("static_url").toString() + customPath + "/" + fileName +
-                    suffix + "?v=" + StringUtil.randomNumber(1);
+            return localPath;
         } catch (IOException e) {
             log.error(e.getMessage());
             return null;

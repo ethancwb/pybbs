@@ -52,7 +52,7 @@ public class TopicService implements ITopicService {
     private IndexedService indexedService;
 
     private final List<String> defaultTab = Arrays.asList("hot", "good", "noanswer", "newest", "all");
-    private final List<String> defaultTag = Arrays.asList("工作", "同城", "学校", "学术", "爱好", "管理", "其他");
+    private final List<String> defaultTag = Arrays.asList("求职", "同城", "学校", "学术", "爱好", "管理", "其他");
 
     @Override
     public MyPage<Map<String, Object>> search(Integer pageNo, Integer pageSize, String keyword) {
