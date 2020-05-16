@@ -1,7 +1,7 @@
-<#macro header page_tab>
+<#macro header page_tab page_tab="good">
   <header>
     <ul>
-      <li><a href="/kaopu/" class="title">${site.name}</a></li>
+      <li><a href="/kaopu/?tab=good" class="title">${site.name}</a></li>
       <li <#if page_tab == "good">class="active"</#if>><a href="/kaopu/?tab=good">精华</a></li>
       <li <#if page_tab == "hot">class="active"</#if>><a href="/kaopu/?tab=hot">最热</a></li>
       <li <#if page_tab == "newest">class="active"</#if>><a href="/kaopu/?tab=newest">最新</a></li>

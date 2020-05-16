@@ -1,6 +1,6 @@
 <#macro score limit top100=false>
-    <div class="card">
-        <div class="card-header">
+    <div class="card yellow-border-card">
+        <div class="card-header yellow-background">
             积分榜
             <#if !top100>
                 <span class="pull-right"><a href="/kaopu/top100">Top100</a></span>

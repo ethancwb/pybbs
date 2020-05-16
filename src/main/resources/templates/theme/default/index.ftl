@@ -9,7 +9,7 @@
     </#if>
     <div class="row">
         <div class="col-md-9">
-            <div class="card" style="min-height: 85vh">
+            <div class="card main-card yellow-border-card">
                 <div class="card-header">
                     <ul class="nav nav-pills">
                         <li class="nav-item"><a class="nav-link <#if tab=="good">active</#if>" href="/kaopu/?tab=good">精华</a>

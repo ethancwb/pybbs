@@ -1,16 +1,96 @@
 body {
     font-family: "Microsoft YaHei UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #fff;
+    bottom: 0;
+    min-height: 100vh;
 }
 
 a, a:hover {
     color: #333;
 }
 
+.yellow-background {
+    background-color: #ffc20b;
+}
+
+.main-card {
+    min-height: 80vh;
+}
+
+.card {
+    border: #ffc20b solid 1px !important;
+    font-size: 1.1rem;
+}
+
+.card-header {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #ffc20b;
+    border: none;
+}
+
 .less-padding {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #A7A8AC;
+    padding: 15px;
+    height: 36px;
+    border-radius: 18px 18px;
+    outline: none;
+    color: #9DBFAF;
+    background-color: transparent;
+}
+
+.searchTerm:focus{
+    color: #00B4CC;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.card > .table td {
+    border: none;
+}
+
+.wrap{
+    width: 350px;
+    max-width: 25vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-primary {
+    background-color: #ffc20b;
+    border-color: #ffc20b;
+}
+
+.btn-primary:hover {
+    background-color: #e6ac0b;
+    border-color: transparent;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    text-align: center;
+    color: #A7A8AC;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
 
 .loginIcon {
     display: inline-block;
@@ -32,8 +112,9 @@ a, a:hover {
 }
 
 .wrapper {
-    background-color: #e5e5e5;
+    background-color: #2f2f2f;
     width: 100%;
+    min-height: 100vh;
 }
 
 .title {
@@ -49,7 +130,18 @@ a, a:hover {
 .nav-pills > li > a {
     position: relative;
     display: block;
-    padding: 0 5px
+    padding: 0 10px
+}
+
+.nav {
+    line-height: 30px;
+    font-size: 1.1rem;
+}
+
+.nav-pills .nav-link.active {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: larger;
 }
 
 .avatar {
@@ -203,6 +295,12 @@ a, a:hover {
 
 .navbar {
     margin-bottom: 1rem;
+    background-color: transparent;
+    color: #ffffff !important;
+    min-height: 120px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {

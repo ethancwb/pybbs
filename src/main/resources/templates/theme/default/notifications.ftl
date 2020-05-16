@@ -7,14 +7,14 @@
                     新消息
                     <a id="markRead" href="javascript:markRead()" class="pull-right" style="display: none">标记已读</a>
                 </div>
-                <div class="card-body">
+                <div class="card-body" style="min-height: 10vh">
                     <#include "components/notification.ftl"/>
                     <@notification userId=_user.id read=0 limit=-1/>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">已读消息</div>
-                <div class="card-body">
+                <div class="card-body" style="min-height: 10vh">
                     <#include "components/notification.ftl"/>
                     <@notification userId=_user.id read=1 limit=20/>
                 </div>

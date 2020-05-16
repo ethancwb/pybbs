@@ -213,7 +213,7 @@
                         success: function (data) {
                             if (data.code === 200) {
                                 setTimeout(function () {
-                                    window.location.href = "/kaopu/";
+                                    window.location.href = "/kaopu/?tab=good";
                                 }, 700);
                             }
                         }
