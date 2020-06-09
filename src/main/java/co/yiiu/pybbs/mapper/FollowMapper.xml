@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.yiiu.pybbs.mapper.FollowMapper">
+
+    <select id="selectByUserFromAndUserTo" resultType="co.yiiu.pybbs.model.Follow">
+        select *
+        from follow
+        where follow.user_from = #{userFrom} and follow.user_to = #{userTo}
+    </select>
+
+    <select id="selectFollowsByUserFrom" resultType="map">
+        select *
+        from follow
+        where follow.user_from = #{userFrom}
+    </select>
+
+    <select id="selectFollowsByUserTo" resultType="map">
+        select *
+        from follow
+        where follow.user_to = #{userTo}
+    </select>
+</mapper>
