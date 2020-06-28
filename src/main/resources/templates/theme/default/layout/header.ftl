@@ -1,7 +1,7 @@
 <#macro header page_tab>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="/kaopu/?tab=good">${site.name!}</a>
+            <a class="navbar_brand" href="/kaopu/?tab=good"><img src="/kaopu/static/theme/default/images/logo.jpeg" width="64" height="64" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
