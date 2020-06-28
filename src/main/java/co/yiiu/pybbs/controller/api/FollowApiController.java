@@ -30,9 +30,9 @@ public class FollowApiController extends BaseApiController {
     private IFollowService followService;
 
     @PostMapping("/add")
-    public Result add(@RequestBody Map<String, String> body) {
-        Integer userFrom = Integer.parseInt(body.get("from"));
+    public Result add(Map<String, String> body) {
         Integer userTo = Integer.parseInt(body.get("to"));
+        Integer userFrom = Integer.parseInt(body.get("from"));
         Follow follow = followService.addFollow(userFrom, userTo);
         return success(follow);
     }
@@ -49,8 +49,10 @@ public class FollowApiController extends BaseApiController {
         return success(list);
     }
 
-    @DeleteMapping("/delete/{userFrom}/{userTo}")
-    public Result delete(@PathVariable Integer userFrom, @PathVariable Integer userTo) {
+    @PostMapping("/delete")
+    public Result delete(Map<String, String> body) {
+        Integer userFrom = Integer.parseInt(body.get("from"));
+        Integer userTo = Integer.parseInt(body.get("to"));
         followService.deleteFollow(userFrom, userTo);
         return success();
     }

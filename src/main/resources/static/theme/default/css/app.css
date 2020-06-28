@@ -22,6 +22,10 @@ a, a:hover {
     font-size: 1.1rem;
 }
 
+.add-friend {
+    width: 150px;
+}
+
 .card-header {
     padding-top: 25px;
     padding-bottom: 25px;
