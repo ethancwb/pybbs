@@ -11,6 +11,12 @@
         <div class="col-md-9">
             <div class="card main-card yellow-border-card">
                 <div class="card-header">
+                    <div class="suggest_users">
+                        <div class="single_logo"></div>
+                        <div class="single_logo"></div>
+                        <div class="single_logo"></div>
+                        <div class="single_logo"></div>
+                    </div>
                     <ul class="nav nav-pills">
                         <li class="nav-item"><a class="nav-link <#if tab=="good">active</#if>" href="/kaopu/?tab=good">精华</a>
                         </li>

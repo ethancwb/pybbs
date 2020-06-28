@@ -26,6 +26,34 @@ a, a:hover {
     width: 150px;
 }
 
+.suggest_users {
+    height: 100px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.single_logo {
+    /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
+    background-image: url('http://i.stack.imgur.com/Dj7eP.jpg');
+
+    /* make a square container */
+    width: 82px;
+    height: 82px;
+
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: top center;
+
+    /* round the edges to a circle with border radius 1/2 container size */
+    border-radius: 50%;
+
+    display: inline-block;
+
+    margin-right: 25px;
+}
+
 .card-header {
     padding-top: 25px;
     padding-bottom: 25px;
