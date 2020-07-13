@@ -31,6 +31,8 @@ public class UserApiController extends BaseApiController {
     private ICollectService collectService;
     @Autowired
     private IOAuthUserService oAuthUserService;
+    @Autowired
+    private IFollowService followService;
 
     // 用户的个人信息
     @GetMapping("/{username}")
@@ -45,6 +47,8 @@ public class UserApiController extends BaseApiController {
         MyPage<Map<String, Object>> comments = commentService.selectByUserId(user.getId(), 1, 10);
         // 查询用户收藏的话题数
         Integer collectCount = collectService.countByUserId(user.getId());
+        // 用户好友列表
+        List<Map<String, Object>> list = followService.selectByUserFrom(user.getId());
 
         Map<String, Object> map = new HashMap<>();
         map.put("user", user);
@@ -52,6 +56,8 @@ public class UserApiController extends BaseApiController {
         map.put("topics", topics);
         map.put("comments", comments);
         map.put("collectCount", collectCount);
+        map.put("follow", list);
+
         return success(map);
     }
 

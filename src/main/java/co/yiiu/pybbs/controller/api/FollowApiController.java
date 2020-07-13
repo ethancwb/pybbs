@@ -43,6 +43,11 @@ public class FollowApiController extends BaseApiController {
         return success(list);
     }
 
+    public Result getRecentFrom(@PathVariable Integer userFrom) {
+        List<Map<String, Object>> list = followService.selectByUserFrom(userFrom);
+        return success(list);
+    }
+
     @GetMapping("/getTo/{userTo}")
     public Result getTo(@PathVariable Integer userTo) {
         List<Map<String, Object>> list = followService.selectByUserTo(userTo);
