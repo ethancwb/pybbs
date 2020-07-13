@@ -32,18 +32,26 @@ public class FollowApiController extends BaseApiController {
     @PostMapping("/add")
     public Result add(Map<String, String> body) {
         Integer userTo = Integer.parseInt(body.get("to"));
-        Integer userFrom = Integer.parseInt(body.get("from"));
+        Integer userFrom = 0;
+        User user = getApiUser();
+        if (user != null){
+            userFrom = user.getId();
+        } else {
+            userFrom = Integer.parseInt(body.get("from"));
+        }
         Follow follow = followService.addFollow(userFrom, userTo);
         return success(follow);
     }
 
-    @GetMapping("/getFrom/{userFrom}")
-    public Result getFrom(@PathVariable Integer userFrom) {
+    @GetMapping("/getFrom/")
+    public Result getFromWithApiUser(){
+        User user = getApiUser();
+        Integer userFrom = user.getId();
         List<Map<String, Object>> list = followService.selectByUserFrom(userFrom);
         return success(list);
     }
-
-    public Result getRecentFrom(@PathVariable Integer userFrom) {
+    @GetMapping("/getFrom/{userFrom}")
+    public Result getFrom(@PathVariable Integer userFrom) {
         List<Map<String, Object>> list = followService.selectByUserFrom(userFrom);
         return success(list);
     }
@@ -56,7 +64,13 @@ public class FollowApiController extends BaseApiController {
 
     @PostMapping("/delete")
     public Result delete(Map<String, String> body) {
-        Integer userFrom = Integer.parseInt(body.get("from"));
+        Integer userFrom = 0;
+        User user = getApiUser();
+        if (user != null){
+            userFrom = user.getId();
+        } else {
+            userFrom = Integer.parseInt(body.get("from"));
+        }
         Integer userTo = Integer.parseInt(body.get("to"));
         followService.deleteFollow(userFrom, userTo);
         return success();
