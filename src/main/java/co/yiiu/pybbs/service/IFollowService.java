@@ -12,5 +12,6 @@ public interface IFollowService {
     List<Map<String, Object>> selectByUserTo(Integer userTo);
     void deleteFollow(Integer userFrom, Integer userTo);
     Follow addFollow(Integer userFrom, Integer userTo);
-
+    List<String> selectByUserFromToIdList(Integer userFrom);
+    List<User> selectByUserFromSuggestionList(Integer userFrom);
 }

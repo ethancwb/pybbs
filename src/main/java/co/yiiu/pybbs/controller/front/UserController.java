@@ -3,6 +3,7 @@ package co.yiiu.pybbs.controller.front;
 import co.yiiu.pybbs.model.OAuthUser;
 import co.yiiu.pybbs.model.User;
 import co.yiiu.pybbs.service.ICollectService;
+import co.yiiu.pybbs.service.IFollowService;
 import co.yiiu.pybbs.service.IOAuthUserService;
 import co.yiiu.pybbs.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -31,6 +33,8 @@ public class UserController extends BaseController {
     private ICollectService collectService;
     @Autowired
     private IOAuthUserService oAuthUserService;
+    @Autowired
+    private IFollowService followService;
 
     @GetMapping("/{username}")
     public String profile(@PathVariable String username, Model model) {
@@ -40,7 +44,8 @@ public class UserController extends BaseController {
         List<OAuthUser> oAuthUsers = oAuthUserService.selectByUserId(user.getId());
         // 查询用户收藏的话题数
         Integer collectCount = collectService.countByUserId(user.getId());
-
+        // 用户好友列表
+        List<String> list = followService.selectByUserFromToIdList(getUser().getId());
         // 找出oauth登录里有没有github，有的话把github的login提取出来
         List<String> logins = oAuthUsers.stream().filter(oAuthUser -> oAuthUser.getType().equals("GITHUB")).map
                 (OAuthUser::getLogin).collect(Collectors.toList());
@@ -52,6 +57,7 @@ public class UserController extends BaseController {
         model.addAttribute("username", username);
         model.addAttribute("oAuthUsers", oAuthUsers);
         model.addAttribute("collectCount", collectCount);
+        model.addAttribute("follow", list);
         return render("user/profile");
     }
 

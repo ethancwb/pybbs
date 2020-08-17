@@ -3,6 +3,7 @@ package co.yiiu.pybbs.controller.front;
 import co.yiiu.pybbs.model.Code;
 import co.yiiu.pybbs.model.User;
 import co.yiiu.pybbs.service.ICodeService;
+import co.yiiu.pybbs.service.IFollowService;
 import co.yiiu.pybbs.service.ISystemConfigService;
 import co.yiiu.pybbs.service.IUserService;
 import co.yiiu.pybbs.util.CookieUtil;
@@ -46,14 +47,18 @@ public class IndexController extends BaseController {
     private IUserService userService;
     @Autowired
     private ICodeService codeService;
+    @Autowired
+    private IFollowService followService;
 
     // 首页
     @GetMapping({"/", "/index", "/index.html"})
     public String index(@RequestParam(defaultValue = "all") String tab, @RequestParam(defaultValue = "1") Integer
             pageNo, Boolean active, Model model) {
+
         model.addAttribute("tab", tab);
         model.addAttribute("active", active);
         model.addAttribute("pageNo", pageNo);
+        model.addAttribute("suggestUsers", followService.selectByUserFromSuggestionList(getUser().getId()));
 
         return render("index");
     }

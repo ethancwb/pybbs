@@ -30,6 +30,8 @@ a, a:hover {
     height: 100px;
     padding-top: 0px;
     padding-bottom: 0px;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .single_logo {
@@ -144,7 +146,7 @@ a, a:hover {
 }
 
 .wrapper {
-    background-color: #2f2f2f;
+    background-color: rgb(36,37,41);
     width: 100%;
     min-height: 100vh;
 }

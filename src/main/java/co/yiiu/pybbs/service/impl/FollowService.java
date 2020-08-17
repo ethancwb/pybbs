@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -32,9 +33,29 @@ public class FollowService implements IFollowService {
     }
 
     @Override
+    public List<String> selectByUserFromToIdList(Integer userFrom) {
+        List<Map<String, Object>> followList = followMapper.selectFollowsByUserFrom(userFrom);
+        ArrayList<String> result = new ArrayList<>();
+        for (Map<String, Object> follow : followList) {
+            result.add(Integer.toString((Integer) follow.get("userTo")));
+        }
+        return result;
+    }
+
+    @Override
     public List<Map<String, Object>> selectByUserTo(Integer userTo) {
         List<Map<String, Object>> followList = followMapper.selectFollowsByUserTo(userTo);
         return followList;
+    }
+
+    @Override
+    public List<User> selectByUserFromSuggestionList(Integer userFrom) {
+        List<Map<String, Object>> followList = followMapper.selectFollowsByUserFrom(userFrom);
+        ArrayList<User> result = new ArrayList<>();
+        for (Map<String, Object> follow : followList) {
+            result.add(userService.selectById((Integer) follow.get("userTo")));
+        }
+        return result;
     }
 
     @Override

@@ -14,8 +14,7 @@
                             </#if>
                             <div>收藏话题: <a href="/kaopu/user/${user.username}/collects">${collectCount!0}</a></div>
                             <div>入驻时间: ${model.formatDate(user.inTime)}</div>
-<#--                            <#if user.getFriends()?seq_contains("#{user.id}")>-->
-                            <#if user.username??>
+                            <#if follow?seq_contains('#{user.id}')>
                                 <button class="btn btn-primary add-friend" id="delete_friend" role="button">
                                     取关
                                 </button>
@@ -62,13 +61,11 @@
     <script>
         $(function () {
             $("#add_friend").click(function () {
-                var username = "${user.id}";
-                var data = {
-                    to: username
-                };
-                $.post("/kaopu/api/follow/add", data, function (data) {
+                $.post("/kaopu/api/follow/add", {
+                    to: "${user.id}"
+                }, function (data) {
                     if (data.code === 200) {
-                        document.getElementById('add_friend').disabled = true;
+                        location.reload();
                     }
                 })
             })
@@ -84,7 +81,7 @@
                 };
                 $.post("/kaopu/api/follow/delete", data, function (data) {
                     if (data.code === 200) {
-                        document.getElementById('delete_friend').disabled = true;
+                        location.reload();
                     }
                 })
             })
