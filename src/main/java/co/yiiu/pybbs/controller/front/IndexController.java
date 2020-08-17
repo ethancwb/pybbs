@@ -27,6 +27,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -58,7 +60,12 @@ public class IndexController extends BaseController {
         model.addAttribute("tab", tab);
         model.addAttribute("active", active);
         model.addAttribute("pageNo", pageNo);
-        model.addAttribute("suggestUsers", followService.selectByUserFromSuggestionList(getUser().getId()));
+        List<User> userList = new ArrayList<>();
+        if (getUser() != null){
+            userList = followService.selectByUserFromSuggestionList(getUser().getId());
+        }
+        model.addAttribute("suggestUsers", userList);
+
 
         return render("index");
     }
